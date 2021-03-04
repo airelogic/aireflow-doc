@@ -5,7 +5,15 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-03-04 09:06:15 +0000"
+      "date"     : "2021-03-04 09:10:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Mapping with XPath and Liquid",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/mapping/",
+      "date"     : "2021-03-04 09:10:08 +0000"
     } ,
   
     {
@@ -13,7 +21,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/terminology/",
-      "date"     : "2021-03-04 09:06:15 +0000"
+      "date"     : "2021-03-04 09:10:08 +0000"
     } 
   
 ]
