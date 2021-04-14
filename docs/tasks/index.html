@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Mapping with XPath and Liquid | AireFlow Docs</title>
+<title>Tasks | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Mapping with XPath and Liquid" />
-<meta name="author" content="Andy & Hannah" />
+<meta property="og:title" content="Tasks" />
+<meta name="author" content="Joshua Moon" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions." />
-<meta property="og:description" content="Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions." />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/mapping/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/mapping/" />
+<meta name="description" content="What is a Task?" />
+<meta property="og:description" content="What is a Task?" />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/tasks/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/tasks/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-04-14T12:55:38+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Mapping with XPath and Liquid" />
+<meta property="twitter:title" content="Tasks" />
 <script type="application/ld+json">
-{"description":"Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions.","headline":"Mapping with XPath and Liquid","dateModified":"2021-04-14T12:55:38+00:00","datePublished":"2021-04-14T12:55:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping/"},"url":"https://docs.aireflow.co.uk/docs/mapping/","author":{"@type":"Person","name":"Andy & Hannah"},"@context":"https://schema.org"}</script>
+{"description":"What is a Task?","headline":"Tasks","dateModified":"2021-04-14T12:55:38+00:00","datePublished":"2021-04-14T12:55:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/tasks/"},"url":"https://docs.aireflow.co.uk/docs/tasks/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -142,7 +142,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+                      <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
                     
                     </ul>
                     
@@ -155,7 +155,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/tasks/">Tasks</a></li>
+                      <li class="uk-active"><a href="/docs/tasks/">Tasks</a></li>
                     
                       
                       
@@ -170,9 +170,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Mapping with XPath and Liquid</h1>
+                    <h1 class="uk-article-title">Tasks</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map xml inside workflows</p>
+                    <p class="subtitle uk-text-lead uk-text-muted">Starting a Flow</p>
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -189,22 +189,45 @@
                     </div>
 
                     <div class="article-content">
-                        <p>Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions.</p>
+                        <h2 id="what-is-a-task">What is a Task?</h2>
 
-<h2 id="xpath">XPath</h2>
-<p>For a text field to contain an XPath expression, it must be in expression mode, this can be done by setting the toggle to On, as shown here. The toggle will display a preview of your XPath expression by evaluating it against the example input provided at the top of the workflow definition.</p>
+<p>A task is an actionable output from a Workflow that requires completion by a user in order to fulfill the workflow requirements.</p>
 
-<p><img src="/assets/img/expression-toggle.png" alt="expression" /></p>
+<p>A task takes a <code class="language-plaintext highlighter-rouge">Name</code>, that is required, and optionally a <code class="language-plaintext highlighter-rouge">Description</code> and <code class="language-plaintext highlighter-rouge">Assignee</code>. If included, the <code class="language-plaintext highlighter-rouge">Assignee</code> should reference a specific user.</p>
 
-<h2 id="liquid">Liquid</h2>
+<h3 id="activity-types">Activity Types</h3>
+<p>Tasks have 3 types that they can be at present: <code class="language-plaintext highlighter-rouge">General</code>, <code class="language-plaintext highlighter-rouge">CompleteForm</code>, and <code class="language-plaintext highlighter-rouge">ReviewForm</code>.</p>
 
-<p>When a text field is in literal mode, it can contain liquid expressions. To access the context, expressions should be in the form <code class="language-plaintext highlighter-rouge">{{ context.your-value }}</code> where <code class="language-plaintext highlighter-rouge">context</code> replaces the base element of your input xml, and <code class="language-plaintext highlighter-rouge">your-value</code> is a dot sepearated path to your desired value.</p>
+<h4 id="general">General</h4>
+<p>This is an all-purpose type that allows for any task.</p>
 
-<p>Liquid expressions can also access the workflow instance itself, so you could for instance access the subject ID using something like <code class="language-plaintext highlighter-rouge">{{ workflow.SubjectId }}</code>.</p>
+<h4 id="completeform">CompleteForm</h4>
+<p>This task is used to indicate that a specific form should be completed and submitted. <em>possible issue: form selection does not appear</em></p>
+
+<h4 id="reviewform">ReviewForm</h4>
+<p>This task is used to indicate that a submitted form should be reviewed. This may be for a secondary opinion, or a manager’s overview, for example.</p>
+
+<h3 id="notifications">Notifications</h3>
+<p>A notification is a way of alerting a user or system that a task has been created and should be actioned. Notifications can be sent via Email or HTTP. Multiple notifications can be configured for any given task.</p>
+
+<h4 id="email">Email</h4>
+<p>An email notification is as it sounds. An email is sent to a user (perhaps defined in the input data). While intended to inform the user that there is a task they need to complete, it can also be used to send receipt of a submission, a summary reply, or any other email. For example, a manager might receive an email notifying them of a ticket that has been raised, while the customer might receive a notification that their issue has been assigned to a manager to look into.</p>
+
+<h4 id="http">HTTP</h4>
+<p>An HTTP notification is a simple <code class="language-plaintext highlighter-rouge">POST</code> request to a defined url. The body of this request can be formed ti cinlude data and match any required shape for the receipient endpoint.</p>
+
+<h3 id="state">State</h3>
+<p>State can be added to a task to provide users the ability to add more details when completing tasks. It takes the form of a simple Kay-Value set, with the option of setting a default value when the task is created. This is primarily useful for containing systems that integrate with AireFlow.</p>
+
+<h3 id="filters">Filters</h3>
+<p>Filters can be added to tasks to determine if the task should be created. These should be an <a href="../mapping">XPath</a> expression that results in either <code class="language-plaintext highlighter-rouge">true</code> (if the task should be created) or <code class="language-plaintext highlighter-rouge">false</code> (if it shouldn’t).</p>
+
+<h3 id="output">Output</h3>
+<p><em>needs completing</em></p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Mapping with XPath and Liquid&url=https://docs.aireflow.co.uk/docs/mapping/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fmapping%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Tasks&url=https://docs.aireflow.co.uk/docs/tasks/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Ftasks%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -222,16 +245,22 @@
 
   
   
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/terminology/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/triggers/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/triggers/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/streams/">Next &rarr;</a></li>
           
     </ul>
     
@@ -266,6 +295,10 @@
     
 
     
+        <li><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+        
+        
+    
 
     
 
@@ -287,10 +320,6 @@
 
     
 
-    
-        <li><a href="/docs/tasks/">Tasks</a></li>
-        
-        
     
 
     
@@ -355,7 +384,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+          <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
         
         </ul>
         
@@ -368,7 +397,7 @@
         
           
           
-          <li class=""><a href="/docs/tasks/">Tasks</a></li>
+          <li class="uk-active"><a href="/docs/tasks/">Tasks</a></li>
         
           
           

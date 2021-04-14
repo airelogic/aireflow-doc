@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-04-14 07:23:05 +0000"
+      "date"     : "2021-04-14 12:55:38 +0000"
     } ,
   
     {
@@ -13,7 +13,23 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/mapping/",
-      "date"     : "2021-04-14 07:23:05 +0000"
+      "date"     : "2021-04-14 12:55:38 +0000"
+    } ,
+  
+    {
+      "title"    : "Streams",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/streams/",
+      "date"     : "2021-04-14 12:55:38 +0000"
+    } ,
+  
+    {
+      "title"    : "Tasks",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/tasks/",
+      "date"     : "2021-04-14 12:55:38 +0000"
     } ,
   
     {
@@ -21,7 +37,15 @@
       "category" : "",
       "tags"     : "featured",
       "url"      : "/docs/terminology/",
-      "date"     : "2021-04-14 07:23:05 +0000"
+      "date"     : "2021-04-14 12:55:38 +0000"
+    } ,
+  
+    {
+      "title"    : "Triggers",
+      "category" : "",
+      "tags"     : "featured",
+      "url"      : "/docs/triggers/",
+      "date"     : "2021-04-14 12:55:38 +0000"
     } 
   
 ]

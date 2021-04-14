@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Mapping with XPath and Liquid | AireFlow Docs</title>
+<title>Streams | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Mapping with XPath and Liquid" />
-<meta name="author" content="Andy & Hannah" />
+<meta property="og:title" content="Streams" />
+<meta name="author" content="Joshua Moon" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions." />
-<meta property="og:description" content="Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions." />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/mapping/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/mapping/" />
+<meta name="description" content="What is a Stream? A Workflow Stream is a way of directing the output of AireForms/forms4health to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. A stream will then trigger the associated workflow with the form as input data." />
+<meta property="og:description" content="What is a Stream? A Workflow Stream is a way of directing the output of AireForms/forms4health to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. A stream will then trigger the associated workflow with the form as input data." />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/streams/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/streams/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-04-14T12:55:38+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Mapping with XPath and Liquid" />
+<meta property="twitter:title" content="Streams" />
 <script type="application/ld+json">
-{"description":"Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions.","headline":"Mapping with XPath and Liquid","dateModified":"2021-04-14T12:55:38+00:00","datePublished":"2021-04-14T12:55:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping/"},"url":"https://docs.aireflow.co.uk/docs/mapping/","author":{"@type":"Person","name":"Andy & Hannah"},"@context":"https://schema.org"}</script>
+{"description":"What is a Stream? A Workflow Stream is a way of directing the output of AireForms/forms4health to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. A stream will then trigger the associated workflow with the form as input data.","headline":"Streams","dateModified":"2021-04-14T12:55:38+00:00","datePublished":"2021-04-14T12:55:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/streams/"},"url":"https://docs.aireflow.co.uk/docs/streams/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -142,7 +142,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+                      <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
                     
                     </ul>
                     
@@ -159,7 +159,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/streams/">Streams</a></li>
+                      <li class="uk-active"><a href="/docs/streams/">Streams</a></li>
                     
                     </ul>
                     
@@ -170,9 +170,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Mapping with XPath and Liquid</h1>
+                    <h1 class="uk-article-title">Streams</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map xml inside workflows</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -189,22 +189,15 @@
                     </div>
 
                     <div class="article-content">
-                        <p>Most text fields in the management UI can contain either XPath expressions, or a combination of literal text with liquid expressions.</p>
+                        <h2 id="what-is-a-stream">What is a Stream?</h2>
+<p>A Workflow Stream is a way of directing the output of <a href="https://forms4health.com">AireForms/forms4health</a> to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. A stream will then trigger the associated workflow with the form as input data.</p>
 
-<h2 id="xpath">XPath</h2>
-<p>For a text field to contain an XPath expression, it must be in expression mode, this can be done by setting the toggle to On, as shown here. The toggle will display a preview of your XPath expression by evaluating it against the example input provided at the top of the workflow definition.</p>
-
-<p><img src="/assets/img/expression-toggle.png" alt="expression" /></p>
-
-<h2 id="liquid">Liquid</h2>
-
-<p>When a text field is in literal mode, it can contain liquid expressions. To access the context, expressions should be in the form <code class="language-plaintext highlighter-rouge">{{ context.your-value }}</code> where <code class="language-plaintext highlighter-rouge">context</code> replaces the base element of your input xml, and <code class="language-plaintext highlighter-rouge">your-value</code> is a dot sepearated path to your desired value.</p>
-
-<p>Liquid expressions can also access the workflow instance itself, so you could for instance access the subject ID using something like <code class="language-plaintext highlighter-rouge">{{ workflow.SubjectId }}</code>.</p>
+<h3 id="routing-key">Routing Key</h3>
+<p>The routing key can be arbitrary text that identifies one or more Streams. To link with forms4health, this is set by convention as <code class="language-plaintext highlighter-rouge">{FORM_KEY}-{VERSION}</code>. These values are defined within forms4health. For example, if you had version <code class="language-plaintext highlighter-rouge">3</code> of a form with key <code class="language-plaintext highlighter-rouge">about-me</code>, then the routing key you should use is <code class="language-plaintext highlighter-rouge">about-me-3</code>.</p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Mapping with XPath and Liquid&url=https://docs.aireflow.co.uk/docs/mapping/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fmapping%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Streams&url=https://docs.aireflow.co.uk/docs/streams/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fstreams%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -222,16 +215,23 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/terminology/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/tasks/">&larr; Previous</a></li>
           
           
-            
-            
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/triggers/">Next &rarr;</a></li>
+
           
     </ul>
     
@@ -266,18 +266,18 @@
     
 
     
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/streams/">Streams</a></li>
+        <li><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
         
         
+    
+
+    
+
+    
+    
+
+    
+
     
 
     
@@ -355,7 +355,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+          <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
         
         </ul>
         
@@ -372,7 +372,7 @@
         
           
           
-          <li class=""><a href="/docs/streams/">Streams</a></li>
+          <li class="uk-active"><a href="/docs/streams/">Streams</a></li>
         
         </ul>
         
