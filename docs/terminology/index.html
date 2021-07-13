@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/terminology/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-13T08:26:40+00:00" />
+<meta property="article:published_time" content="2021-07-13T11:00:01+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AireFlow Terminology" />
 <script type="application/ld+json">
-{"description":"Workflow Definitions","headline":"AireFlow Terminology","dateModified":"2021-07-13T08:26:40+00:00","datePublished":"2021-07-13T08:26:40+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/terminology/"},"url":"https://docs.aireflow.co.uk/docs/terminology/","author":{"@type":"Person","name":"Andy & Hannah"},"@context":"https://schema.org"}</script>
+{"description":"Workflow Definitions","headline":"AireFlow Terminology","dateModified":"2021-07-13T11:00:01+00:00","datePublished":"2021-07-13T11:00:01+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/terminology/"},"url":"https://docs.aireflow.co.uk/docs/terminology/","author":{"@type":"Person","name":"Andy & Hannah"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -181,7 +181,7 @@
 
 
 
-<time datetime="2021-07-13T08:26:40+00:00" itemprop="datePublished">
+<time datetime="2021-07-13T11:00:01+00:00" itemprop="datePublished">
     
     Jul 13, 2021
 </time>
@@ -193,31 +193,19 @@
 
 <p>Workflow definitions can be thought of as templates that describe the structure of a workflow you may want to run at some point in the future. Definitions can contain XPath and Liquid expressions that will be evaluated against any input given upon instantiation. <a href="/docs/mapping/">More details about mapping are available here</a></p>
 
-<h2 id="workflow-instances">Workflow Instances</h2>
+<h2 id="triggers">Triggers</h2>
 
-<p>Workflow instances are created from definitions and can be provided with input upon creation. Each instance has a <strong>Subject ID</strong>, that can either be pulled from the input using an expression or specified explicitly when instantiating a workflow.</p>
+<p>Triggers allow you to specify when a task should be created or run. All triggers are based on an event, and there are two main types of event:</p>
+<ul>
+  <li>Custom events - An event received via the api (such as a form submission, or any other external activity tha can trigger an api call)</li>
+  <li>Task events - Events triggered internally by the lfiecycle of a task, such as the task being started, completed, or reassigned.</li>
+</ul>
 
 <h2 id="tasks">Tasks</h2>
 
-<p>Tasks are defined as part of a workflow definition, then created within the workflow instance. Tasks can have a state made up of key/value pairs, which can be updated via the runtime API or runtime UI. Tasks can also send notifications when a workflow instance is run.</p>
+<p>Tasks can be manual, which represent a task that needs to be completed. Manual tasks have a status (New, In Progress, Completed) and can also optionally have state made up of key/value pairs.</p>
 
-<h2 id="running-workflows">Running Workflows</h2>
-
-<p>When a workflow instance is created, it isn’t always run immediately. When an instance is triggered, it runs by sending any associated notifications for all tasks. When running a workflow, all tasks are run simultaneously, meaning all notifications for all tasks are sent as soon as a workflow is run (tasks are not dependent on each other being completed or even started). If you need one task to run after another, that task should be part of a separate workflow with an event trigger.</p>
-
-<h2 id="triggers">Triggers</h2>
-
-<p>Triggers allow you to specify when a workflow instance should be run. Triggers can optionally instantiate a workflow if it does not already exist, alternatively they can run an existing instance. There are 4 types of triggers:</p>
-<ul>
-  <li>Once - Run the workflow once, either immediately or at 1 fixed time in the future.</li>
-  <li>Event - Run the workflow when some other event happens (e.g. another workflow is completed, or a task is started)</li>
-  <li>Scheduled - Repeatedly run the workflow at a definied frequency</li>
-  <li>HTTP - Run the workflow when a certain http request is received</li>
-</ul>
-
-<h2 id="streams">Streams</h2>
-
-<p>Streams can be used to create workflow instances based on external events, such as a forms4health form being submitted.</p>
+<p>The alternative to a manual task is a task that sends an HTTP request or email.</p>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=AireFlow Terminology&url=https://docs.aireflow.co.uk/docs/terminology/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
