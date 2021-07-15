@@ -11,17 +11,17 @@
 <meta property="og:title" content="Triggers" />
 <meta name="author" content="Joshua Moon" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is a Trigger? A trigger is a method of initiating, or starting, a Workflow. Multiple triggers can be combined in order to make a more flexible workflow. There are a number of available triggers, as described below:" />
-<meta property="og:description" content="What is a Trigger? A trigger is a method of initiating, or starting, a Workflow. Multiple triggers can be combined in order to make a more flexible workflow. There are a number of available triggers, as described below:" />
+<meta name="description" content="What is a Trigger? A trigger is a method of starting, a Workflow/Task. There are triggers based on a number of different events, as described below:" />
+<meta property="og:description" content="What is a Trigger? A trigger is a method of starting, a Workflow/Task. There are triggers based on a number of different events, as described below:" />
 <link rel="canonical" href="https://docs.aireflow.co.uk/docs/triggers/" />
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/triggers/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-13T11:00:01+00:00" />
+<meta property="article:published_time" content="2021-07-15T13:17:28+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Triggers" />
 <script type="application/ld+json">
-{"description":"What is a Trigger? A trigger is a method of initiating, or starting, a Workflow. Multiple triggers can be combined in order to make a more flexible workflow. There are a number of available triggers, as described below:","headline":"Triggers","dateModified":"2021-07-13T11:00:01+00:00","datePublished":"2021-07-13T11:00:01+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/triggers/"},"url":"https://docs.aireflow.co.uk/docs/triggers/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
+{"description":"What is a Trigger? A trigger is a method of starting, a Workflow/Task. There are triggers based on a number of different events, as described below:","headline":"Triggers","dateModified":"2021-07-15T13:17:28+00:00","datePublished":"2021-07-15T13:17:28+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/triggers/"},"url":"https://docs.aireflow.co.uk/docs/triggers/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -144,11 +144,6 @@
                       
                       <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
                     
-                    </ul>
-                    
-                    <h5>Workflows</h5>
-                    <ul class="uk-nav uk-nav-default doc-nav">
-                    
                       
                       
                       <li class="uk-active"><a href="/docs/triggers/">Triggers</a></li>
@@ -156,10 +151,6 @@
                       
                       
                       <li class=""><a href="/docs/tasks/">Tasks</a></li>
-                    
-                      
-                      
-                      <li class=""><a href="/docs/streams/">Streams</a></li>
                     
                     </ul>
                     
@@ -181,36 +172,36 @@
 
 
 
-<time datetime="2021-07-13T11:00:01+00:00" itemprop="datePublished">
+<time datetime="2021-07-15T13:17:28+00:00" itemprop="datePublished">
     
-    Jul 13, 2021
+    Jul 15, 2021
 </time>
 
                     </div>
 
                     <div class="article-content">
                         <h2 id="what-is-a-trigger">What is a Trigger?</h2>
-<p>A trigger is a method of initiating, or starting, a Workflow. Multiple triggers can be combined in order to make a more flexible workflow. There are a number of available triggers, as described below:</p>
+<p>A trigger is a method of starting, a Workflow/Task. There are triggers based on a number of different events, as described below:</p>
 
-<h3 id="event">Event</h3>
-<p>An event trigger allows for a workflow to run based on what happens within another workflow. In order to setup an Event trigger, you need to select an existing <code class="language-plaintext highlighter-rouge">Workflow</code> and <code class="language-plaintext highlighter-rouge">Version</code>, and an <code class="language-plaintext highlighter-rouge">Event Type</code>. The available Event types are detailled below:</p>
-
-<h4 id="task-initiated">Task Initiated</h4>
+<h3 id="task-instantiated">Task Instantiated</h3>
 <p>This event will occur when a selected Task is created, every time.</p>
 
-<h4 id="task-assigned">Task Assigned</h4>
-<p>This event occurs when a selected Task is created with an assigned user.</p>
+<h3 id="task-assigned">Task Assigned</h3>
+<p>This event occurs when the assignee of a task is changed.</p>
 
-<h4 id="task-started">Task Started</h4>
+<h3 id="task-started">Task Started</h3>
 <p>This event occurs when a selected Task is moved to the In Progress step. If the Task is moved from <code class="language-plaintext highlighter-rouge">New</code> directly to <code class="language-plaintext highlighter-rouge">Completed</code>, this event will not fire.</p>
 
-<h4 id="task-completed">Task Completed</h4>
+<h3 id="task-completed">Task Completed</h3>
 <p>This event occurs when a selected Task is moved to the <code class="language-plaintext highlighter-rouge">Completed</code> status, from either <code class="language-plaintext highlighter-rouge">New</code> or <code class="language-plaintext highlighter-rouge">In Progress</code>.
 occurs when all tasks in a workflow instance have been moved to the <code class="language-plaintext highlighter-rouge">Completed</code> status.</p>
 
-<h3 id="http">Http</h3>
-<p><em>needs more info</em>
-An HTTP trigger will run the workflow when an HTTP request is made. <em>todo: find out url for request</em> When invoked in this manner, the request will provide the input data for the workflow. The HTTP verb for this request can be defined to filter out specific requests, or to allow multiple similar methods (e.g., allowing <code class="language-plaintext highlighter-rouge">POST</code> and <code class="language-plaintext highlighter-rouge">PUT</code> to trigger).</p>
+<p>This event also occurs for notification tasks, after the notification is sent.</p>
+
+<h2 id="custom-events">Custom Events</h2>
+<p>A custom event is an event published via the api, with an associated routing key. By creating an Event Definition, you can tell your task to be triggered by a custom event.</p>
+
+<p>This can be used as a way of directing the output of <a href="https://forms4health.com">AireForms/forms4health</a> to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. A stream will then trigger the associated workflow with the form as input data. When a forms4health form is submitted, this is set by convention as <code class="language-plaintext highlighter-rouge">{FORM_KEY}-{VERSION}</code>. For example, if you had version <code class="language-plaintext highlighter-rouge">3</code> of a form with key <code class="language-plaintext highlighter-rouge">about-me</code>, then the routing key you should use is <code class="language-plaintext highlighter-rouge">about-me-3</code>.</p>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=Triggers&url=https://docs.aireflow.co.uk/docs/triggers/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
@@ -292,20 +283,20 @@ An HTTP trigger will run the workflow when an HTTP request is made. <em>todo: fi
     
 
     
-        <li><a href="/docs/streams/">Streams</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
         <li><a href="/docs/tasks/">Tasks</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/terminology/">AireFlow Terminology</a></li>
         
         
             
@@ -361,11 +352,6 @@ An HTTP trigger will run the workflow when an HTTP request is made. <em>todo: fi
           
           <li class=""><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
         
-        </ul>
-        
-        <h5 class="uk-margin-top">Workflows</h5>
-        <ul class="uk-nav uk-nav-default doc-nav">
-        
           
           
           <li class="uk-active"><a href="/docs/triggers/">Triggers</a></li>
@@ -373,10 +359,6 @@ An HTTP trigger will run the workflow when an HTTP request is made. <em>todo: fi
           
           
           <li class=""><a href="/docs/tasks/">Tasks</a></li>
-        
-          
-          
-          <li class=""><a href="/docs/streams/">Streams</a></li>
         
         </ul>
         
