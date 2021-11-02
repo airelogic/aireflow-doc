@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Getting started with AireFlow | AireFlow Docs</title>
+<title>Updating Tasks | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Getting started with AireFlow" />
-<meta name="author" content="Joshua Moon" />
+<meta property="og:title" content="Updating Tasks" />
+<meta name="author" content="Andy Goldfinch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is AireFlow? AireFlow is a system for creating series of tasks based on external events. Some examples of this would be:" />
-<meta property="og:description" content="What is AireFlow? AireFlow is a system for creating series of tasks based on external events. Some examples of this would be:" />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/getting-started/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/getting-started/" />
+<meta name="description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
+<meta property="og:description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/updating-tasks/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/updating-tasks/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-11-02T16:30:59+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Getting started with AireFlow" />
+<meta property="twitter:title" content="Updating Tasks" />
 <script type="application/ld+json">
-{"description":"What is AireFlow? AireFlow is a system for creating series of tasks based on external events. Some examples of this would be:","headline":"Getting started with AireFlow","dateModified":"2021-11-02T16:30:59+00:00","datePublished":"2021-11-02T16:30:59+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/getting-started/"},"url":"https://docs.aireflow.co.uk/docs/getting-started/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
+{"description":"Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove.","headline":"Updating Tasks","dateModified":"2021-11-02T16:30:59+00:00","datePublished":"2021-11-02T16:30:59+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/updating-tasks/"},"url":"https://docs.aireflow.co.uk/docs/updating-tasks/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -68,7 +68,7 @@
                     
                     
                     
-                        <li class="uk-active"><a href="/docs/getting-started/" >Getting Started</a></li>
+                        <li><a href="/docs/getting-started/" >Getting Started</a></li>
                     
                 
                     
@@ -134,7 +134,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+                      <li class=""><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
                     
                       
                       
@@ -155,7 +155,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/updating-tasks/">Updating Tasks</a></li>
+                      <li class="uk-active"><a href="/docs/updating-tasks/">Updating Tasks</a></li>
                     
                       
                       
@@ -174,9 +174,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Getting started with AireFlow</h1>
+                    <h1 class="uk-article-title">Updating Tasks</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn the basics of AireFlow</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -193,19 +193,74 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="what-is-aireflow">What is AireFlow?</h2>
-<p>AireFlow is a system for creating series of tasks based on external events. Some examples of this would be:</p>
+                        <p>Updating a task is done by making a PATCH request to <code class="language-plaintext highlighter-rouge">/Api/Tasks/{workflowInstanceId}/{taskId}</code>, structured as a <a href="http://jsonpatch.com/">JSON Patch request</a>. We support 3 patch operations: <code class="language-plaintext highlighter-rouge">add</code>, <code class="language-plaintext highlighter-rouge">replace</code> &amp; <code class="language-plaintext highlighter-rouge">remove</code>.</p>
 
+<p>All requests should be an HTTP PATCH with a JSON body, structured like similar to the examples below.</p>
+
+<h3 id="supported-paths">Supported paths</h3>
+
+<p>The following (case insensitive) paths are the only ones supported:</p>
 <ul>
-  <li>co-ordinating manual steps, such as daily checks or routine maintenance</li>
-  <li>reviewing / responding to form submissions</li>
+  <li><code class="language-plaintext highlighter-rouge">activitycontext/status</code></li>
+  <li><code class="language-plaintext highlighter-rouge">name</code></li>
+  <li><code class="language-plaintext highlighter-rouge">assigneeId</code></li>
+  <li><code class="language-plaintext highlighter-rouge">state</code> (to update/replace the entire state)</li>
+  <li><code class="language-plaintext highlighter-rouge">state/{key}</code> (to update a single value in state)</li>
 </ul>
 
-<p>AireFlow is intended for integration with other systems as opposed to being a standalone service.</p>
+<h3 id="operation-replace">Operation: Replace</h3>
+<p>To replace an existing value. This will change a value that already exists, if the value does not exist then nothing will be changed</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+  {
+    "op": "replace",
+    "path": "/ActivityContext/Status",
+    "value": "InProgress"
+  }
+]
+</code></pre></div></div>
+
+<h3 id="operation-add">Operation: Add</h3>
+<p>To add a new value to task state, use the <code class="language-plaintext highlighter-rouge">add</code> operation. This will add a value if it doesn’t already exist, or replace a value that already exists.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+  {
+    "op": "add",
+    "path": "/state/first",
+    "value": "test"
+  }
+]
+</code></pre></div></div>
+
+<h3 id="operation-remove">Operation: Remove</h3>
+<p>To remove an existing value. This will only replace a value that already exists, if the value does not exist then nothing will be changed</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+  {
+    "op": "remove",
+    "path": "/state/third"
+  }
+]
+</code></pre></div></div>
+
+<h3 id="multiple-operations">Multiple Operations</h3>
+<p>Multiple operations in one request is supported, like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+  {
+    "op": "remove",
+    "path": "/state/third"
+  },
+  {
+    "op": "add",
+    "path": "/state/fourth",
+    "value": "My new value"
+  }
+]
+</code></pre></div></div>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Getting started with AireFlow&url=https://docs.aireflow.co.uk/docs/getting-started/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fgetting-started%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Updating Tasks&url=https://docs.aireflow.co.uk/docs/updating-tasks/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fupdating-tasks%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -217,14 +272,28 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
-
+            
+            
+            <li><a class="hvr-back" href="/docs/task-types/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/terminology/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/triggers/">Next &rarr;</a></li>
           
     </ul>
     
@@ -245,6 +314,10 @@
 
     
 
+    
+        <li><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+        
+        
     
 
     
@@ -282,19 +355,6 @@
 
     
         <li><a href="/docs/terminology/">AireFlow Terminology</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/triggers/">Triggers & Mutations</a></li>
         
         
             
@@ -340,7 +400,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+          <li class=""><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
         
           
           
@@ -361,7 +421,7 @@
         
           
           
-          <li class=""><a href="/docs/updating-tasks/">Updating Tasks</a></li>
+          <li class="uk-active"><a href="/docs/updating-tasks/">Updating Tasks</a></li>
         
           
           
