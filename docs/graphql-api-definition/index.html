@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Task Types | AireFlow Docs</title>
+<title>GraphQL API Definition | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Task Types" />
-<meta name="author" content="James Ratcliffe" />
+<meta property="og:title" content="GraphQL API Definition" />
+<meta name="author" content="Stephen Cripps" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Manual A manual task is used for when someone needs to perform an action e.g. make an observation." />
-<meta property="og:description" content="Manual A manual task is used for when someone needs to perform an action e.g. make an observation." />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/task-types/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/task-types/" />
+<meta name="description" content="GraphQL Api Definition" />
+<meta property="og:description" content="GraphQL Api Definition" />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/graphql-api-definition/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/graphql-api-definition/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-02-10T13:36:17+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Task Types" />
+<meta property="twitter:title" content="GraphQL API Definition" />
 <script type="application/ld+json">
-{"description":"Manual A manual task is used for when someone needs to perform an action e.g. make an observation.","headline":"Task Types","dateModified":"2022-02-10T13:36:17+00:00","datePublished":"2022-02-10T13:36:17+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/task-types/"},"url":"https://docs.aireflow.co.uk/docs/task-types/","author":{"@type":"Person","name":"James Ratcliffe"},"@context":"https://schema.org"}</script>
+{"description":"GraphQL Api Definition","headline":"GraphQL API Definition","dateModified":"2022-02-10T13:36:17+00:00","datePublished":"2022-02-10T13:36:17+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/graphql-api-definition/"},"url":"https://docs.aireflow.co.uk/docs/graphql-api-definition/","author":{"@type":"Person","name":"Stephen Cripps"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -155,7 +155,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/task-types/">Task Types</a></li>
+                      <li class=""><a href="/docs/task-types/">Task Types</a></li>
                     
                       
                       
@@ -189,7 +189,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
+                      <li class="uk-active"><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
                     
                     </ul>
                     
@@ -200,9 +200,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Task Types</h1>
+                    <h1 class="uk-article-title">GraphQL API Definition</h1>
 
-                    
+                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to structure GraphQL queries</p>
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -219,18 +219,256 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="manual">Manual</h2>
-<p>A manual task is used for when someone needs to perform an action e.g. make an observation.</p>
+                        <h1 id="graphql-api-definition">GraphQL Api Definition</h1>
 
-<h2 id="email">Email</h2>
-<p>An email task is as it sounds. An email is sent to a user (perhaps defined in the input data). While intended to inform the user that there is a task they need to complete, it can also be used to send receipt of a submission, a summary reply, or any other email. For example, a manager might receive an email notifying them of a ticket that has been raised, while the customer might receive a notification that their issue has been assigned to a manager to look into.</p>
+<p>The following document outlines the AireFlow GraphQL API</p>
 
-<h2 id="http">HTTP</h2>
-<p>An HTTP task is a simple <code class="language-plaintext highlighter-rouge">POST</code> request to a defined url. The body of this request can be formed to include data and match any required shape for the receipient endpoint.</p>
+<h2 id="tasks">Tasks</h2>
+
+<p>The tasks query can be used to read all instantiated tasks. There are currently no mutations available via GraphQL and any changes will need to be made via the REST API.</p>
+
+<h3 id="query-structure">Query Structure</h3>
+
+<p>The following properties can be retrieved via the GraphQL API</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query {
+    tasks {
+        pageCount
+        nodes {
+            id
+            name
+            created
+            updated
+            lastRun
+            subjectId
+            workflowDefinitionVersion
+            workflowDefinitionId
+            filters
+            context
+            activityContext {
+                status
+                    ...on ManualActivityContext {
+                        due
+                    }
+                    ...on EmailActivityContext {
+                        to
+                        subject
+                        body
+                    }
+                    ...on HttpActivityContext {
+                        url
+                        contentType
+                        body
+                        correlationId
+                    }
+            }
+            description
+            assigneeId
+            state {
+                key
+                value
+            }
+            taskType
+            triggeredUpdates {
+                routingKey
+                update
+            }
+        }
+    }
+}
+</code></pre></div></div>
+
+<h3 id="filtering">Filtering</h3>
+
+<p>The filter parameter is used as follows. Each item in the filter array must be true for a task to be included in the result:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query {
+    tasks (
+        filter:[{
+            property: "activityContext.status"
+            condition: EQ
+            value: ["New", "InProgress"]
+    },
+    {
+            property: "assigneeId"
+            condition: EQ
+            value: "1"
+    },
+    {
+            property: "state[comments]"
+            condition: INCLUDES
+            value: "Some Comment"
+    }
+    ]) {
+        ...
+    }
+}
+</code></pre></div></div>
+
+<p>Where <em>property</em> is the name of the property to filter, <em>condition</em> defines what type of filter is applied and <em>value</em> is the value the condition is checked against. The value can be a string or an array of strings (in some cases). In the above example, the status must be either new or in progress, the assigneeId must be 1 and there is a state item called “comments” who’s value includes the substring “Some Comment”.</p>
+
+<p>In order to access a nested property, separate them using a ‘.’ as above.</p>
+
+<p>For dictionaries, use <code class="language-plaintext highlighter-rouge">{property}.key</code> to filter on the keys, use <code class="language-plaintext highlighter-rouge">{property}[{key name}]</code> to filter on the value of a specific key.</p>
+
+<h4 id="types-of-filter">Types of Filter</h4>
+
+<p>Each property type has a subset of valid conditions listed here.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property Type</th>
+      <th>Valid Conditions</th>
+      <th>Accepts Array Value</th>
+      <th>True When</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>string</td>
+      <td>EQ</td>
+      <td>True</td>
+      <td>Property value equals one of the input values (Case-Sensitive)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>NOT</td>
+      <td>True</td>
+      <td>Property value does not equal one of the input values (Case-Sensitive)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>INCLUDES</td>
+      <td>True</td>
+      <td>One of the input values is a substring of the property value (Case-Sensitive)</td>
+    </tr>
+    <tr>
+      <td>DateTime</td>
+      <td>LT</td>
+      <td>False</td>
+      <td>Property value is before than the input value</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>GT</td>
+      <td>False</td>
+      <td>Property value is after the input value</td>
+    </tr>
+    <tr>
+      <td>Int</td>
+      <td>EQ</td>
+      <td>False</td>
+      <td>Property value is equal to the input value</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>GT</td>
+      <td>False</td>
+      <td>Property value is greater than the input value</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>LT</td>
+      <td>False</td>
+      <td>Property value is less than the input value</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td>AnyEq</td>
+      <td>False</td>
+      <td>Property list contains the input value</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>NoneEq</td>
+      <td>False</td>
+      <td>Property list does not contain the input value</td>
+    </tr>
+    <tr>
+      <td>Enum</td>
+      <td>EQ</td>
+      <td>True</td>
+      <td>Property value equals one of the input values</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>NOT</td>
+      <td>True</td>
+      <td>Property value does not equal one of the input values</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>INCLUDES</td>
+      <td>True</td>
+      <td>One of the input values is a substring of the property value</td>
+    </tr>
+    <tr>
+      <td>Dictionary Key</td>
+      <td>AnyEq</td>
+      <td>True</td>
+      <td>Input value is a key in the dictionary</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>NoneEq</td>
+      <td>True</td>
+      <td>Input value is not a key in the dictionary</td>
+    </tr>
+    <tr>
+      <td>Dictionary Value</td>
+      <td>EQ</td>
+      <td>True</td>
+      <td>Property value equals one of the input values (Case-Sensitive)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>NOT</td>
+      <td>True</td>
+      <td>Property value does not equal one of the input values (Case-Sensitive)</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>INCLUDES</td>
+      <td>True</td>
+      <td>One of the input values is a substring of the property value (Case-Sensitive)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sorting">Sorting</h3>
+
+<p>The sorting parameter is used as follows. The direction is either ASCENDING or DESCENDING.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query {
+    tasks (
+        sort: {
+            property: "activityContext.due"
+            direction: ASCENDING
+    }) {
+        ...
+    }
+}
+</code></pre></div></div>
+
+<h3 id="paging">Paging</h3>
+
+<p>The paging parameter is used as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query {
+    tasks (
+        paging: {
+            pageNumber: 1,
+            pageSize: 50
+    }) {
+        ...
+    }
+}
+</code></pre></div></div>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Task Types&url=https://docs.aireflow.co.uk/docs/task-types/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Ftask-types%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=GraphQL API Definition&url=https://docs.aireflow.co.uk/docs/graphql-api-definition/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fgraphql-api-definition%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -254,16 +492,32 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/mapping/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/task-statuses/">&larr; Previous</a></li>
           
           
-            
-            
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/triggers/">Next &rarr;</a></li>
+
           
     </ul>
     
@@ -298,10 +552,6 @@
     
 
     
-        <li><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
-        
-        
-    
 
     
 
@@ -325,6 +575,19 @@
 
     
         <li><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/mutations/">Mutations</a></li>
         
         
             
@@ -391,7 +654,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/task-types/">Task Types</a></li>
+          <li class=""><a href="/docs/task-types/">Task Types</a></li>
         
           
           
@@ -425,7 +688,7 @@
         
           
           
-          <li class=""><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
+          <li class="uk-active"><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
         
         </ul>
         
