@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Getting started with AireFlow | AireFlow Docs</title>
+<title>Versioning | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Getting started with AireFlow" />
-<meta name="author" content="Joshua Moon" />
+<meta property="og:title" content="Versioning" />
+<meta name="author" content="Andy Goldfinch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:" />
-<meta property="og:description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:" />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/getting-started/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/getting-started/" />
+<meta name="description" content="How does versioning work?" />
+<meta property="og:description" content="How does versioning work?" />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/versioning/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/versioning/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-20T15:38:22+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Getting started with AireFlow" />
+<meta property="twitter:title" content="Versioning" />
 <script type="application/ld+json">
-{"description":"What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:","headline":"Getting started with AireFlow","dateModified":"2022-05-20T15:38:22+00:00","datePublished":"2022-05-20T15:38:22+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/getting-started/"},"url":"https://docs.aireflow.co.uk/docs/getting-started/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
+{"description":"How does versioning work?","headline":"Versioning","dateModified":"2022-05-20T15:38:22+00:00","datePublished":"2022-05-20T15:38:22+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/versioning/"},"url":"https://docs.aireflow.co.uk/docs/versioning/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -54,7 +54,7 @@
                     
                     
                     
-                        <li class="uk-active"><a href="/docs/getting-started/" >Getting Started</a></li>
+                        <li><a href="/docs/getting-started/" >Getting Started</a></li>
                     
                 
                     
@@ -120,7 +120,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+                      <li class=""><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
                     
                       
                       
@@ -157,7 +157,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/versioning/">Versioning</a></li>
+                      <li class="uk-active"><a href="/docs/versioning/">Versioning</a></li>
                     
                     </ul>
                     
@@ -194,9 +194,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Getting started with AireFlow</h1>
+                    <h1 class="uk-article-title">Versioning</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn the basics of AireFlow</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -213,31 +213,32 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="what-is-aireflow">What is AireFlow?</h2>
-<p>AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:</p>
+                        <h2 id="how-does-versioning-work">How does versioning work?</h2>
 
-<ul>
-  <li>co-ordinating manual steps, such as daily checks or routine maintenance</li>
-  <li>reviewing / responding to form submissions</li>
-</ul>
+<p>In AireFlow, versioning sits at the workflow definition level. This means that you can create new versions of an entire workflow definition, but not individual tasks within a workflow.</p>
 
-<p>AireFlow is intended for integration with other systems as opposed to being a standalone service.</p>
+<h2 id="creating-a-new-version">Creating A New Version</h2>
 
-<h2 id="how-do-i-create-real-tasks">How do I create real tasks?</h2>
-<p>Before you can create task instances for a real world use case, you must start with a <a href="../workflow-definitions">workflow definition</a> to describe the type of tasks you want to create.</p>
+<p>To create a new version of a workflow, open the version manager by clicking the version in the workflow definitions list, then click “New Version”. This will create a new version by duplicating the previous highest version. All triggers based on task events inside the workflow will be updated, but any tasks from separate workflow definitions that rely on task events from this workflow will need a new trigger adding to point to the new version of your tasks.</p>
 
-<p>Once you’ve defined your task, you need to specify which type of event will cause a task instance to be created by adding <a href="../triggers">a trigger</a>.</p>
+<p>New versions are disabled by default, so nothing in your existing process will change until the new version is enabled.</p>
 
-<p>Now that you have a task definition with a trigger, whenever the relevant event happens a new task instance will be created. Most workflows will need to start with a Custom Event, which is fired by calling the events API. Alternatively, to test your workflow from the management screens, go to the Event Definitions page and click the send icon on the right hand side of an event. Enter the relevant values and click Fire Event to simulate a call to the events API.</p>
+<h2 id="enabling-or-disabling-a-version">Enabling or Disabling A Version</h2>
 
-<h2 id="how-can-i-see-what-aireflow-is-doing">How can I see what AireFlow is doing?</h2>
-<p>The easiest way to see what AireFlow is doing is to visit the Event Log, where you can see a list of every event that has been processed. This screen will show you both custom events and task events, so you can see which events have been sent from external systems (such as forms4health) via the api, as well as events that have been emitted by tasks being created and updated.</p>
+<p>Using the version manager, a workflow version can be enabled or disabled. When a version is disabled, no tasks within it will be triggered. That includes both tasks triggered by custom events, and tasks triggered by events from other tasks.</p>
 
-<p>You can also search by any field to narrow the Event Log down to some more specific events, for example you could enter a subject ID in the search bar to see all events for a particular patient, or you could enter a workflow name to see any events from a specific workflow.</p>
+<p>This means that if you have a long running workflow that someone is part-way through, then disabling that version will prevent them from progressing any further tasks in that workflow from being created. If you only want to prevent new instances of that workflow, but allow existing ones to continue, then you should disable any custom event triggers that start the workflow.</p>
+
+<p>Multiple versions of a workflow can be enabled simultaneously, however this can result in duplicate tasks being created if more than one version has tasks with similar triggers.</p>
+
+<h2 id="editing-a-version">Editing A Version</h2>
+
+<p>To edit a specific version of a workflow, select that version using the version manager popup, then open the workflow editor panel like usual.</p>
+
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Getting started with AireFlow&url=https://docs.aireflow.co.uk/docs/getting-started/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fgetting-started%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Versioning&url=https://docs.aireflow.co.uk/docs/versioning/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fversioning%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -249,14 +250,40 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
-
+            
+            
+            <li><a class="hvr-back" href="/docs/import-export/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/terminology/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/updating-tasks/">Next &rarr;</a></li>
           
     </ul>
     
@@ -277,6 +304,10 @@
 
     
 
+    
+        <li><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+        
+        
     
 
     
@@ -314,19 +345,6 @@
 
     
         <li><a href="/docs/import-export/">Importing & Exporting Workflow Definitions</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/mapping/">Mapping with XPath and Liquid</a></li>
         
         
             
@@ -372,7 +390,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+          <li class=""><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
         
           
           
@@ -409,7 +427,7 @@
         
           
           
-          <li class=""><a href="/docs/versioning/">Versioning</a></li>
+          <li class="uk-active"><a href="/docs/versioning/">Versioning</a></li>
         
         </ul>
         
