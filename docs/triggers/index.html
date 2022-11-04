@@ -9,19 +9,19 @@
 <title>Triggers &amp; Events | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Triggers &amp; Events" />
-<meta name="author" content="Joshua Moon" />
+<meta name="author" content="Andy Goldfinch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is a Trigger? A trigger is a method of starting a Workflow/Task. When a specific event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can cause tasks to be created, custom events and task events." />
-<meta property="og:description" content="What is a Trigger? A trigger is a method of starting a Workflow/Task. When a specific event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can cause tasks to be created, custom events and task events." />
+<meta name="description" content="A trigger is what defines when a task should be created. When an event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can trigger tasks to be created, custom events and task events." />
+<meta property="og:description" content="A trigger is what defines when a task should be created. When an event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can trigger tasks to be created, custom events and task events." />
 <link rel="canonical" href="https://docs.aireflow.co.uk/docs/triggers/" />
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/triggers/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-31T10:20:22+00:00" />
+<meta property="article:published_time" content="2022-11-04T16:26:12+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Triggers &amp; Events" />
 <script type="application/ld+json">
-{"description":"What is a Trigger? A trigger is a method of starting a Workflow/Task. When a specific event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can cause tasks to be created, custom events and task events.","headline":"Triggers &amp; Events","dateModified":"2022-10-31T10:20:22+00:00","datePublished":"2022-10-31T10:20:22+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/triggers/"},"url":"https://docs.aireflow.co.uk/docs/triggers/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
+{"description":"A trigger is what defines when a task should be created. When an event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can trigger tasks to be created, custom events and task events.","headline":"Triggers &amp; Events","dateModified":"2022-11-04T16:26:12+00:00","datePublished":"2022-11-04T16:26:12+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/triggers/"},"url":"https://docs.aireflow.co.uk/docs/triggers/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -205,21 +205,26 @@
 
 
 
-<time datetime="2022-10-31T10:20:22+00:00" itemprop="datePublished">
+<time datetime="2022-11-04T16:26:12+00:00" itemprop="datePublished">
     
-    Oct 31, 2022
+    Nov 4, 2022
 </time>
 
                     </div>
 
                     <div class="article-content">
-                        <h2 id="what-is-a-trigger">What is a Trigger?</h2>
-<p>A trigger is a method of starting a Workflow/Task. When a specific event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can cause tasks to be created, custom events and task events.</p>
+                        <p>A trigger is what defines when a task should be created. When an event happens, AireFlow will create an instance of every task that is defined with a relevant trigger. There are two main types of event that can trigger tasks to be created, custom events and task events.</p>
 
 <h2 id="custom-events">Custom Events</h2>
-<p>A custom event is an event published via the api, with an associated routing key. By creating an Event Definition, you can tell your task to be triggered by a custom event.</p>
+<p>A custom event is an event published via the api, with an associated routing key.</p>
 
-<p>This can be used as a way of directing the output of <a href="https://forms4health.com">AireForms/forms4health</a> to a Workflow. The AireFlow plugin is already installed in forms4health, so collecting the output of a form can be accomplished simply by using the correct routing key. The associated task will be triggered with the form XML as its context. When a forms4health form is submitted, this is set by convention as <code class="language-plaintext highlighter-rouge">{FORM_KEY}-{VERSION}</code>. For example, if you had version <code class="language-plaintext highlighter-rouge">3</code> of a form with key <code class="language-plaintext highlighter-rouge">about-me</code>, then the routing key you should use in the AireFlow event definition is <code class="language-plaintext highlighter-rouge">about-me-3</code>. This custom event can then be set against a workflow task as a trigger.</p>
+<h3 id="event-definitions">Event Definitions</h3>
+<p>To trigger a task based on a custom event, define your event with a name and key via the Event Definitions page. Note that once a key is set it cannot be changed, so you will need to create a new event definition and re-add it to any triggers if your key needs to be changed.</p>
+
+<p>The event definitions page can also be used to test workflows by manually firing events that would otherwise come from outside AireFlow.</p>
+
+<h3 id="forms4health-integration">Forms4Health Integration</h3>
+<p>Custom event triggers can be used as a way of directing the output of <a href="https://forms4health.com">AireForms/forms4health</a> into a Workflow. The AireFlow plugin is built into forms4health, so as long as it’s enabled for the environment you’re using, collecting the output of a form can be accomplished simply by using the correct routing key. The associated task will be triggered with the form XML as its context. When a forms4health form is submitted, the routing key is set by convention as <code class="language-plaintext highlighter-rouge">{FORM_KEY}-{VERSION}</code>. For example, if you had version <code class="language-plaintext highlighter-rouge">3</code> of a form with key <code class="language-plaintext highlighter-rouge">about-me</code>, then the routing key you should use in the Event Definition is <code class="language-plaintext highlighter-rouge">about-me-3</code>. This custom event can then be added to a workflow definition as a trigger.</p>
 
 <p>In forms4health, if the form is a single pass form then the AireFlow delivery channel should be used. Whereas, if it’s a clinician form it can use the built in AireFlow plugin. Both methods rely on some configuration in the environment variables. For more information about this, please take a look at the <a href="https://docs.forms4health.com/">forms4health documentation</a>.</p>
 
@@ -227,19 +232,29 @@
 <p>Task events are created by AireFlow itself, whenever task instances are created or updated. There are several different types of task event.</p>
 
 <h3 id="task-instantiated">Task Instantiated</h3>
-<p>This event will occur when a selected Task is created, every time.</p>
+<p>This event will occur when a task is created, every time.</p>
 
 <h3 id="task-assigned">Task Assigned</h3>
-<p>This event occurs when the assignee of a task is changed.</p>
+<p>This event occurs every time the assignee of a task is changed.</p>
 
 <h3 id="task-started">Task Started</h3>
-<p>This event occurs when a selected Task is moved to the In Progress step. If the Task is moved from <code class="language-plaintext highlighter-rouge">New</code> directly to <code class="language-plaintext highlighter-rouge">Completed</code>, this event will not fire.</p>
+<p>This event occurs when the status of a task is changed to <code class="language-plaintext highlighter-rouge">In Progress</code>. If the Task is moved from <code class="language-plaintext highlighter-rouge">New</code> directly to <code class="language-plaintext highlighter-rouge">Completed</code>, this event will not fire.</p>
 
 <h3 id="task-completed">Task Completed</h3>
-<p>This event occurs when a selected Task is moved to the <code class="language-plaintext highlighter-rouge">Completed</code> status, from either <code class="language-plaintext highlighter-rouge">New</code> or <code class="language-plaintext highlighter-rouge">In Progress</code>.
-occurs when all tasks in a workflow instance have been moved to the <code class="language-plaintext highlighter-rouge">Completed</code> status.</p>
+<p>This event occurs when the status of a task is changed to <code class="language-plaintext highlighter-rouge">Completed</code>, from either <code class="language-plaintext highlighter-rouge">New</code> or <code class="language-plaintext highlighter-rouge">In Progress</code>.</p>
 
-<p>This event also occurs for notification tasks, after the notification is sent.</p>
+<p>This event also occurs automatically for notification tasks, after the notification is sent.</p>
+
+<h3 id="task-failed">Task Failed</h3>
+<p>This event occurs when the status of a task is changed to <code class="language-plaintext highlighter-rouge">Failed</code>.</p>
+
+<p>This event also occurs automatically for notification tasks, when a notification fails to be sent and all retry attempts have also failed.</p>
+
+<h3 id="task-cancelled">Task Cancelled</h3>
+<p>This event occurs when the status of a task is changed to <code class="language-plaintext highlighter-rouge">Cancelled</code>.</p>
+
+<h3 id="task-blocked">Task Blocked</h3>
+<p>This event occurs when the status of a task is changed to <code class="language-plaintext highlighter-rouge">Blocked</code>.</p>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=Triggers & Events&url=https://docs.aireflow.co.uk/docs/triggers/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
