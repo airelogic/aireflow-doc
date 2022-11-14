@@ -11,17 +11,17 @@
 <meta property="og:title" content="Updating Task Instances" />
 <meta name="author" content="Andy Goldfinch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
-<meta property="og:description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
+<meta name="description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
+<meta property="og:description" content="Updating a task is done by making a PATCH request to /Api/Tasks/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove." />
 <link rel="canonical" href="https://docs.aireflow.co.uk/docs/updating-tasks/" />
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/updating-tasks/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-11-04T16:26:12+00:00" />
+<meta property="article:published_time" content="2022-11-14T15:57:46+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Updating Task Instances" />
 <script type="application/ld+json">
-{"description":"Updating a task is done by making a PATCH request to /Api/Tasks/{workflowInstanceId}/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove.","headline":"Updating Task Instances","dateModified":"2022-11-04T16:26:12+00:00","datePublished":"2022-11-04T16:26:12+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/updating-tasks/"},"url":"https://docs.aireflow.co.uk/docs/updating-tasks/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
+{"description":"Updating a task is done by making a PATCH request to /Api/Tasks/{taskId}, structured as a JSON Patch request. We support 3 patch operations: add, replace &amp; remove.","headline":"Updating Task Instances","dateModified":"2022-11-14T15:57:46+00:00","datePublished":"2022-11-14T15:57:46+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/updating-tasks/"},"url":"https://docs.aireflow.co.uk/docs/updating-tasks/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -205,17 +205,17 @@
 
 
 
-<time datetime="2022-11-04T16:26:12+00:00" itemprop="datePublished">
+<time datetime="2022-11-14T15:57:46+00:00" itemprop="datePublished">
     
-    Nov 4, 2022
+    Nov 14, 2022
 </time>
 
                     </div>
 
                     <div class="article-content">
-                        <p>Updating a task is done by making a PATCH request to <code class="language-plaintext highlighter-rouge">/Api/Tasks/{workflowInstanceId}/{taskId}</code>, structured as a <a href="http://jsonpatch.com/">JSON Patch request</a>. We support 3 patch operations: <code class="language-plaintext highlighter-rouge">add</code>, <code class="language-plaintext highlighter-rouge">replace</code> &amp; <code class="language-plaintext highlighter-rouge">remove</code>.</p>
+                        <p>Updating a task is done by making a PATCH request to <code class="language-plaintext highlighter-rouge">/Api/Tasks/{taskId}</code>, structured as a <a href="http://jsonpatch.com/">JSON Patch request</a>. We support 3 patch operations: <code class="language-plaintext highlighter-rouge">add</code>, <code class="language-plaintext highlighter-rouge">replace</code> &amp; <code class="language-plaintext highlighter-rouge">remove</code>.</p>
 
-<p>All requests should be an HTTP PATCH with a JSON body, structured like similar to the examples below.</p>
+<p>All requests should be an HTTP PATCH with a JSON body, structured as in the examples below.</p>
 
 <h3 id="supported-paths">Supported paths</h3>
 
@@ -229,7 +229,7 @@
 </ul>
 
 <h3 id="operation-replace">Operation: Replace</h3>
-<p>To replace an existing value. This will change a value that already exists, if the value does not exist then nothing will be changed</p>
+<p>To replace an existing value. This will change a value that already exists, <strong>if the value does not yet exist the task will not be changed</strong>.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
   {
