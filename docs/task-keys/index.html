@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>GraphQL API Explorer | AireFlow Docs</title>
+<title>Task Keys | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="GraphQL API Explorer" />
-<meta name="author" content="Andy Goldfinch" />
+<meta property="og:title" content="Task Keys" />
+<meta name="author" content="Callum Goodridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="You can try GraphQL queries from your browser using Banana Cake Pop by opening the AireFlow menu and selecting “GraphQL API”. From there you can try out and validate your queries, as well as browse the schema of the API." />
-<meta property="og:description" content="You can try GraphQL queries from your browser using Banana Cake Pop by opening the AireFlow menu and selecting “GraphQL API”. From there you can try out and validate your queries, as well as browse the schema of the API." />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/graphql-api-explorer/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/graphql-api-explorer/" />
+<meta name="description" content="About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again." />
+<meta property="og:description" content="About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again." />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/task-keys/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/task-keys/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-11-30T14:36:34+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="GraphQL API Explorer" />
+<meta property="twitter:title" content="Task Keys" />
 <script type="application/ld+json">
-{"description":"You can try GraphQL queries from your browser using Banana Cake Pop by opening the AireFlow menu and selecting “GraphQL API”. From there you can try out and validate your queries, as well as browse the schema of the API.","headline":"GraphQL API Explorer","dateModified":"2022-11-30T14:36:34+00:00","datePublished":"2022-11-30T14:36:34+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/graphql-api-explorer/"},"url":"https://docs.aireflow.co.uk/docs/graphql-api-explorer/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
+{"description":"About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again.","headline":"Task Keys","dateModified":"2022-11-30T14:36:34+00:00","datePublished":"2022-11-30T14:36:34+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/task-keys/"},"url":"https://docs.aireflow.co.uk/docs/task-keys/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -141,7 +141,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/task-keys/">Task Keys</a></li>
+                      <li class="uk-active"><a href="/docs/task-keys/">Task Keys</a></li>
                     
                       
                       
@@ -191,7 +191,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
+                      <li class=""><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
                     
                     </ul>
                     
@@ -202,9 +202,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">GraphQL API Explorer</h1>
+                    <h1 class="uk-article-title">Task Keys</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">How to try GraphQL queries from the browser</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -221,21 +221,29 @@
                     </div>
 
                     <div class="article-content">
-                        <p>You can try GraphQL queries from your browser using <a href="https://chillicream.com/docs/bananacakepop/getting-started">Banana Cake Pop</a> by opening the AireFlow menu and selecting “GraphQL API”. From there you can try out and validate your queries, as well as browse the schema of the API.</p>
+                        <h2 id="about">About</h2>
+<p>A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again.</p>
 
-<h2 id="authentication">Authentication</h2>
+<h2 id="formatting-rules">Formatting Rules</h2>
+<p>There are a number of formatting rules which are set out which you must follow. They are as follows:</p>
+<ul>
+  <li>Only contains lowercase letters, numbers and dashes, e.g. <code class="language-plaintext highlighter-rouge">key-123</code>.</li>
+  <li>Starts with a letter e.g. <code class="language-plaintext highlighter-rouge">123-key</code> will not be valid but <code class="language-plaintext highlighter-rouge">key-123</code> will be.</li>
+</ul>
 
-<p>Banana Cake Pop doesn’t support AireFlow’s usual authentication methods, so you will need to manually add an HTTP header for it to work. Headers can be set through the UI at the bottom of the screen.</p>
+<h2 id="duplicate-key-rules">Duplicate Key Rules</h2>
+<p>As mentioned above, the key is unique across all workflow definitions. An example of this is as follows:</p>
 
-<p><img src="/assets/img/graphql-auth.png" alt="expression" /></p>
+<p>Let’s say we want to create a workflow definition with 2 tasks. We assign a key of <code class="language-plaintext highlighter-rouge">task-key-1</code> to the first task and <code class="language-plaintext highlighter-rouge">task-key-2</code> to the second task. This would be valid. If we then wanted to create a third task for this workflow definition but also assign <code class="language-plaintext highlighter-rouge">task-key-1</code> as the key to this third task then we would get an error as this key has already been used.</p>
 
-<p>If you are using API key authentication, then you need to add the <code class="language-plaintext highlighter-rouge">X-Api-Key</code> header.</p>
+<p>Taking this example, if we instead wanted to create another new workflow definition with only one task with a key of <code class="language-plaintext highlighter-rouge">task-key-1</code> we would also see an error. Even though this key would be unique for this particular workflow definition, it has already been used in another separate workflow definition.</p>
 
-<p>If you are using any other type of authentication (such as AireIdentity or any other identity provider), then you need to add the <code class="language-plaintext highlighter-rouge">Authorization</code> header along with a valid access token. The easiest way to find a token to use is by opening the Network tab of your browser’s developer tools, refreshing the Workflow Definitions page and then looking for the Authorization header that is sent along with the <code class="language-plaintext highlighter-rouge">/WorkflowDefinition</code> GET request. Remember to include the word “Bearer” at the start when copying the token into the API Explorer, just as it appears in the Network tab.</p>
+<p>Finally, the only time where you will see the key used more than once for a workflow definition is when you have multiple versions. If you take the first example again where we have two tasks, one with the key <code class="language-plaintext highlighter-rouge">task-key-1</code> and one with the key <code class="language-plaintext highlighter-rouge">task-key-2</code>, and then create a new version of this workflow, we would not see an error. Version one of the workflow definition will have two tasks, both with the same keys as the two tasks in version two.</p>
+
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=GraphQL API Explorer&url=https://docs.aireflow.co.uk/docs/graphql-api-explorer/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fgraphql-api-explorer%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Task Keys&url=https://docs.aireflow.co.uk/docs/task-keys/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Ftask-keys%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -259,44 +267,16 @@
 
   
   
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/graphql-api-definition/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/mapping/">&larr; Previous</a></li>
           
           
-
+            
+            
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/task-types/">Next &rarr;</a></li>
           
     </ul>
     
@@ -357,16 +337,7 @@
     
 
     
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/import-export/">Importing & Exporting Workflow Definitions</a></li>
+        <li><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
         
         
             
@@ -433,7 +404,7 @@
         
           
           
-          <li class=""><a href="/docs/task-keys/">Task Keys</a></li>
+          <li class="uk-active"><a href="/docs/task-keys/">Task Keys</a></li>
         
           
           
@@ -483,7 +454,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
+          <li class=""><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
         
         </ul>
         
