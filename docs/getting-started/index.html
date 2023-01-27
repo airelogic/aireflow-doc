@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Getting started with AireFlow | AireFlow Docs</title>
+<title>Getting Started with AireFlow | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Getting started with AireFlow" />
-<meta name="author" content="Joshua Moon" />
+<meta property="og:title" content="Getting Started with AireFlow" />
+<meta name="author" content="Andy Goldfinch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:" />
-<meta property="og:description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:" />
+<meta name="description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. There are three main concepts that define how AireFlow works: tasks, events &amp; workflow definitions. Workflow definitions define templates for tasks to be created when certain events happen." />
+<meta property="og:description" content="What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. There are three main concepts that define how AireFlow works: tasks, events &amp; workflow definitions. Workflow definitions define templates for tasks to be created when certain events happen." />
 <link rel="canonical" href="https://docs.aireflow.co.uk/docs/getting-started/" />
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/getting-started/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-05T16:50:42+00:00" />
+<meta property="article:published_time" content="2023-01-27T12:00:30+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Getting started with AireFlow" />
+<meta property="twitter:title" content="Getting Started with AireFlow" />
 <script type="application/ld+json">
-{"description":"What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:","headline":"Getting started with AireFlow","dateModified":"2023-01-05T16:50:42+00:00","datePublished":"2023-01-05T16:50:42+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/getting-started/"},"url":"https://docs.aireflow.co.uk/docs/getting-started/","author":{"@type":"Person","name":"Joshua Moon"},"@context":"https://schema.org"}</script>
+{"description":"What is AireFlow? AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. There are three main concepts that define how AireFlow works: tasks, events &amp; workflow definitions. Workflow definitions define templates for tasks to be created when certain events happen.","headline":"Getting Started with AireFlow","dateModified":"2023-01-27T12:00:30+00:00","datePublished":"2023-01-27T12:00:30+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/getting-started/"},"url":"https://docs.aireflow.co.uk/docs/getting-started/","author":{"@type":"Person","name":"Andy Goldfinch"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -120,7 +120,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+                      <li class="uk-active"><a href="/docs/getting-started/">Getting Started with AireFlow</a></li>
                     
                       
                       
@@ -211,9 +211,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Getting started with AireFlow</h1>
+                    <h1 class="uk-article-title">Getting Started with AireFlow</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn the basics of AireFlow</p>
+                    <p class="subtitle uk-text-lead uk-text-muted">An introduction to some of the important concepts.</p>
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -222,28 +222,33 @@
 
 
 
-<time datetime="2023-01-05T16:50:42+00:00" itemprop="datePublished">
+<time datetime="2023-01-27T12:00:30+00:00" itemprop="datePublished">
     
-    Jan 5, 2023
+    Jan 27, 2023
 </time>
 
                     </div>
 
                     <div class="article-content">
                         <h2 id="what-is-aireflow">What is AireFlow?</h2>
-<p>AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. Some examples of this would be:</p>
+<p>AireFlow is an event driven workflow system for coordinating real-world processes using human-actionable tasks. There are three main concepts that define how AireFlow works: tasks, events &amp; workflow definitions. Workflow definitions define templates for tasks to be created when certain events happen.</p>
 
+<p>Some examples of tasks could be:</p>
 <ul>
-  <li>co-ordinating manual steps, such as daily checks or routine maintenance</li>
-  <li>reviewing / responding to form submissions</li>
+  <li>Reviewing a form submission</li>
+  <li>Sending an email to a clinician</li>
+  <li>Waiting for a patient to respond to a form</li>
 </ul>
 
-<p>AireFlow is intended for integration with other systems as opposed to being a standalone service.</p>
+<p>Some examples of events could be:</p>
+<ul>
+  <li>A form being submitted</li>
+  <li>A button being clicked in a third party system</li>
+  <li>A task being created</li>
+  <li>A task being completed</li>
+</ul>
 
-<p>AireFlow is a per tenant application as opposed to a per customer application. The preferred approach is to use our multi-tenanted <a href="https://my.aireflow.co.uk">production instance</a>. However, in certain situations where it is required, we are able to create on-prem installations. These on-prem installations will also have the multi-tenanted capability built into the application.</p>
-
-<h2 id="how-do-i-create-a-tenant">How do I create a tenant?</h2>
-<p>Currently we do not have the ability to add a tenant through the AireFlow interface. This is a technical task and requires a member of the AireFlow development team to create a new tenant.</p>
+<p>AireFlow is intended for integration with other systems rather than being a standalone service. The preferred approach is to use our multi-tenanted <a href="https://my.aireflow.co.uk">production instance</a>. However, in certain situations where it is required, we are able to create on-prem installations.</p>
 
 <h2 id="how-do-i-create-real-tasks">How do I create real tasks?</h2>
 <p>Before you can create task instances for a real world use case, you must start with a <a href="../workflow-definitions">workflow definition</a> to describe the type of tasks you want to create.</p>
@@ -257,8 +262,11 @@
 
 <p>You can also search by any field to narrow the Event Log down to some more specific events, for example you could enter a subject ID in the search bar to see all events for a particular patient, or you could enter a workflow name to see any events from a specific workflow.</p>
 
+<h2 id="how-do-i-create-a-tenant">How do I create a tenant?</h2>
+<p>Currently we do not have the ability to add a tenant through the AireFlow interface. This is a technical task and requires a member of the AireFlow development team to create a new tenant.</p>
+
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Getting started with AireFlow&url=https://docs.aireflow.co.uk/docs/getting-started/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Getting Started with AireFlow&url=https://docs.aireflow.co.uk/docs/getting-started/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
     <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fgetting-started%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
@@ -394,7 +402,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/getting-started/">Getting started with AireFlow</a></li>
+          <li class="uk-active"><a href="/docs/getting-started/">Getting Started with AireFlow</a></li>
         
           
           
