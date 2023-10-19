@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>AireVault Mapping | AireFlow Docs</title>
+<title>Event Definition Groups | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="AireVault Mapping" />
-<meta name="author" content="Jag Nahl" />
+<meta property="og:title" content="Event Definition Groups" />
+<meta name="author" content="Callum Goodridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Mapping AireVault variables" />
-<meta property="og:description" content="Mapping AireVault variables" />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
+<meta name="description" content="What is an Event Definition Group? Event definition groups allow you to define groups under which individual event keys can be asscociated. The ability to nest the event keys in groups allows for a simplified workflow design allowing you to assign group triggers to tasks instead of requiring a trigger for each event key, thus reducing clutter." />
+<meta property="og:description" content="What is an Event Definition Group? Event definition groups allow you to define groups under which individual event keys can be asscociated. The ability to nest the event keys in groups allows for a simplified workflow design allowing you to assign group triggers to tasks instead of requiring a trigger for each event key, thus reducing clutter." />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/event-definition-groups/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/event-definition-groups/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-10-19T09:16:21+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AireVault Mapping" />
+<meta property="twitter:title" content="Event Definition Groups" />
 <script type="application/ld+json">
-{"description":"Mapping AireVault variables","headline":"AireVault Mapping","dateModified":"2023-10-19T09:16:21+00:00","datePublished":"2023-10-19T09:16:21+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping-airevault/"},"url":"https://docs.aireflow.co.uk/docs/mapping-airevault/","author":{"@type":"Person","name":"Jag Nahl"},"@context":"https://schema.org"}</script>
+{"description":"What is an Event Definition Group? Event definition groups allow you to define groups under which individual event keys can be asscociated. The ability to nest the event keys in groups allows for a simplified workflow design allowing you to assign group triggers to tasks instead of requiring a trigger for each event key, thus reducing clutter.","headline":"Event Definition Groups","dateModified":"2023-10-19T09:16:21+00:00","datePublished":"2023-10-19T09:16:21+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/event-definition-groups/"},"url":"https://docs.aireflow.co.uk/docs/event-definition-groups/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -141,7 +141,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
+                      <li class=""><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
                     
                       
                       
@@ -182,7 +182,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/event-definition-groups/">Event Definition Groups</a></li>
+                      <li class="uk-active"><a href="/docs/event-definition-groups/">Event Definition Groups</a></li>
                     
                       
                       
@@ -232,9 +232,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">AireVault Mapping</h1>
+                    <h1 class="uk-article-title">Event Definition Groups</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map AireVault variables.</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -251,36 +251,45 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="mapping-airevault-variables">Mapping AireVault variables</h2>
+                        <h2 id="what-is-an-event-definition-group">What is an Event Definition Group?</h2>
+<p>Event definition groups allow you to define groups under which individual event keys can be asscociated. The ability to nest the event keys in groups allows for a simplified workflow design allowing you to assign group triggers to tasks instead of requiring a trigger for each event key, thus reducing clutter.</p>
 
-<p>Using the AireVault management API you can create variables that can be used within AireFlow’s workflow definition. Each of these have a key and a number of scoped variables that can be specified.</p>
+<h2 id="how-do-event-definition-groups-work-within-workflows">How do Event Definition Groups work within workflows?</h2>
+<p>For example, lets say you have an event definition group with the group key <code class="language-plaintext highlighter-rouge">event-group-1</code> with 3 event keys (<code class="language-plaintext highlighter-rouge">event-key-1</code>, <code class="language-plaintext highlighter-rouge">event-key-2</code>, and <code class="language-plaintext highlighter-rouge">event-key-3</code>) assigned to the group. You can then add a trigger for this group to a workflow task definition by selecting the <code class="language-plaintext highlighter-rouge">group</code> event type and then the group event <code class="language-plaintext highlighter-rouge">event-group-1</code>. This would then mean that any of the event keys assigned to this event definition group (<code class="language-plaintext highlighter-rouge">event-key-1</code>, <code class="language-plaintext highlighter-rouge">event-key-2</code>, and <code class="language-plaintext highlighter-rouge">event-key-3</code>) would trigger this task or mutation.</p>
 
-<p>Similar to using liquid to map data within the context, AireVault variables are mapped in the same way.</p>
+<h2 id="how-do-you-create-an-event-definition-group">How do you create an Event Definition Group?</h2>
+<p>To create an event definition group, click the Event Definition Groups tab in the side bar menu and then click the plus (+) icon in the top right of the page. Here you must enter a unique name for the event definition group as well as a unique group key. Please note it is not possible to edit the group key after creation, however you will be able to edit the name. Once you are happy you can click the check button. Your created event definition group will now appear in the list and you will have a few actions available to you to manage this group.</p>
 
-<p>Below would be an example request to AireVault to create a new vault variable to store an error email address:</p>
+<h3 id="group-key-formatting-rules">Group Key Formatting Rules</h3>
+<p>There are a number of formatting rules which are set out which you must follow. They are as follows:</p>
+<ul>
+  <li>Only contains lowercase letters, numbers and dashes, e.g. <code class="language-plaintext highlighter-rouge">key-123</code>.</li>
+  <li>Starts with a letter e.g. <code class="language-plaintext highlighter-rouge">123-key</code> will not be valid but <code class="language-plaintext highlighter-rouge">key-123</code> will be.</li>
+</ul>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erroremail"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flow:workflowDefinitionKey:workflowDefinitionVersion"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev.aireflowerror@airelogic.com"</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<h2 id="event-definition-group-actions">Event Definition Group Actions</h2>
 
-<p><em>The workflowDefinitionKey and workflowDefinitionVersion segment of the scope would be replaced with the related values.</em></p>
+<h3 id="editing-group-name">Editing Group Name</h3>
+<p>By clicking on the event definition group name you will be able to edit the name value. Please note this must be unique.</p>
 
-<p>Within the workflow definition you can access the vault variables with the expression <code class="language-plaintext highlighter-rouge">{{ vault.variables.erroremail }}</code></p>
+<h3 id="deleting-groups">Deleting Groups</h3>
+<p>By clicking the delete icon you will be presented with a confirmation box. Please note that deleting an event definition group won’t remove it from any task triggers within workflow definitions, however any events in the group will no longer trigger those tasks or mutations. For example, before deleting the group, if you had an event definition group with the group key <code class="language-plaintext highlighter-rouge">event-group-1</code> with 3 event keys (<code class="language-plaintext highlighter-rouge">event-key-1</code>, <code class="language-plaintext highlighter-rouge">event-key-2</code>, and <code class="language-plaintext highlighter-rouge">event-key-3</code>) assigned and then you had a workflow definition with a task which is triggered by <code class="language-plaintext highlighter-rouge">event-group-1</code> then any of the event keys (<code class="language-plaintext highlighter-rouge">event-key-1</code>, <code class="language-plaintext highlighter-rouge">event-key-2</code>, and <code class="language-plaintext highlighter-rouge">event-key-3</code>) would trigger this task. However, after deleting the event definition group <code class="language-plaintext highlighter-rouge">event-group-1</code> the event keys (<code class="language-plaintext highlighter-rouge">event-key-1</code>, <code class="language-plaintext highlighter-rouge">event-key-2</code>, and <code class="language-plaintext highlighter-rouge">event-key-3</code>) would no longer trigger the task, however the event definition group key <code class="language-plaintext highlighter-rouge">event-group-1</code> would still remain in the workflows task definition. It should also be noted that because <code class="language-plaintext highlighter-rouge">event-group-1</code> still remains in the workflow task definition that if you were to create a new event definition group with the key <code class="language-plaintext highlighter-rouge">event-group-1</code> then the triggers would become active again and any event keys defined in the new <code class="language-plaintext highlighter-rouge">event-group-1</code> would now trigger the task/mutation.</p>
 
-<p>Depending on what scopes you have stored against the key, it will return different values. AireFlow requests the key of <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey:workflowDefinitionVersion</code> so this would return dev.aireflowerror@airelogic.com</p>
+<h3 id="exporting-and-importing-groups">Exporting and Importing Groups</h3>
+<p>There is an option to export event definition groups. Clicking the export button will open a json formatted text area where you can copy this value and then import using the import option next to the plus (+) button in the top right of the page. You will need to ensure that when you import the group that the name and groupKey values are both unique.</p>
 
-<p>However if you wanted a value to match only on the <code class="language-plaintext highlighter-rouge">workflowDefinitionKey</code> for all versions you could remove the last segment of the scope when creating the variable e.g. <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey</code></p>
+<h3 id="editing-groups-event-keys">Editing Group’s Event Keys</h3>
+<p>Here you will be able to select event definitions which you have already defined in the event definitions page using the dropdown, as well as being able to type an event key which you do not have a definition for and then hit enter to add it to the group. Once you have selected/added your event keys to the group you can then click the <code class="language-plaintext highlighter-rouge">save</code> button. You also have the option of removing the event keys from the event definition group by clicking the <code class="language-plaintext highlighter-rouge">X</code> button on the event key you would like to remove and then clicking <code class="language-plaintext highlighter-rouge">save</code>.</p>
 
-<p>If you were to have the scope as <code class="language-plaintext highlighter-rouge">flow</code>, it would now match for all the AireFlow calls across all workflow definitions.</p>
+<h3 id="assigning-a-group-as-a-task-trigger">Assigning a Group as a Task Trigger</h3>
+<p>You can then add a trigger against a workflow task definition by selecting the <code class="language-plaintext highlighter-rouge">group</code> event type and then the group event e.g. <code class="language-plaintext highlighter-rouge">event-group-1</code>. Please visit the <a href="../triggers">Triggers</a> page for more information on triggers.</p>
+
+<h3 id="assigning-a-group-as-a-task-mutation-trigger">Assigning a Group as a Task Mutation Trigger</h3>
+<p>You can then add a mutation trigger against a workflow task definition by selecting the <code class="language-plaintext highlighter-rouge">group</code> event type and then the group event e.g. <code class="language-plaintext highlighter-rouge">event-group-1</code>. Please visit the <a href="../mutations">Mutations</a> page for more information on mutations.</p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=AireVault Mapping&url=https://docs.aireflow.co.uk/docs/mapping-airevault/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fmapping-airevault%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Event Definition Groups&url=https://docs.aireflow.co.uk/docs/event-definition-groups/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fevent-definition-groups%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -304,16 +313,43 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/mapping/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/task-due-date/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/task-keys/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/git-import/">Next &rarr;</a></li>
           
     </ul>
     
@@ -334,10 +370,6 @@
 
     
 
-    
-        <li><a href="/docs/event-definition-groups/">Event Definition Groups</a></li>
-        
-        
     
 
     
@@ -375,6 +407,19 @@
 
     
         <li><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/graphql-api-explorer/">GraphQL API Explorer</a></li>
         
         
             
@@ -441,7 +486,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
+          <li class=""><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
         
           
           
@@ -482,7 +527,7 @@
         
           
           
-          <li class=""><a href="/docs/event-definition-groups/">Event Definition Groups</a></li>
+          <li class="uk-active"><a href="/docs/event-definition-groups/">Event Definition Groups</a></li>
         
           
           
