@@ -9,19 +9,19 @@
 <title>AireVault Mapping | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="AireVault Mapping" />
-<meta name="author" content="Jag Nahl" />
+<meta name="author" content="Jag Nahl & Callum Goodridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Mapping AireVault variables" />
-<meta property="og:description" content="Mapping AireVault variables" />
+<meta name="description" content="Mapping AireVault Variables &amp; Secrets" />
+<meta property="og:description" content="Mapping AireVault Variables &amp; Secrets" />
 <link rel="canonical" href="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-19T09:16:21+00:00" />
+<meta property="article:published_time" content="2023-11-08T14:18:49+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AireVault Mapping" />
 <script type="application/ld+json">
-{"description":"Mapping AireVault variables","headline":"AireVault Mapping","dateModified":"2023-10-19T09:16:21+00:00","datePublished":"2023-10-19T09:16:21+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping-airevault/"},"url":"https://docs.aireflow.co.uk/docs/mapping-airevault/","author":{"@type":"Person","name":"Jag Nahl"},"@context":"https://schema.org"}</script>
+{"description":"Mapping AireVault Variables &amp; Secrets","headline":"AireVault Mapping","dateModified":"2023-11-08T14:18:49+00:00","datePublished":"2023-11-08T14:18:49+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping-airevault/"},"url":"https://docs.aireflow.co.uk/docs/mapping-airevault/","author":{"@type":"Person","name":"Jag Nahl & Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -234,7 +234,7 @@
 
                     <h1 class="uk-article-title">AireVault Mapping</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map AireVault variables.</p>
+                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map AireVault variables and secrets.</p>
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -243,19 +243,19 @@
 
 
 
-<time datetime="2023-10-19T09:16:21+00:00" itemprop="datePublished">
+<time datetime="2023-11-08T14:18:49+00:00" itemprop="datePublished">
     
-    Oct 19, 2023
+    Nov 8, 2023
 </time>
 
                     </div>
 
                     <div class="article-content">
-                        <h2 id="mapping-airevault-variables">Mapping AireVault variables</h2>
+                        <h2 id="mapping-airevault-variables--secrets">Mapping AireVault Variables &amp; Secrets</h2>
 
-<p>Using the AireVault management API you can create variables that can be used within AireFlow’s workflow definition. Each of these have a key and a number of scoped variables that can be specified.</p>
+<p>Using the AireVault API you can create variables and secrets that can be used within AireFlow’s workflow definition. Each of these have a key and a number of scoped values that can be specified.</p>
 
-<p>Similar to using liquid to map data within the context, AireVault variables are mapped in the same way.</p>
+<p>Similar to using liquid to map data within the context, AireVault variables and secrets are mapped in the same way.</p>
 
 <p>Below would be an example request to AireVault to create a new vault variable to store an error email address:</p>
 
@@ -270,11 +270,11 @@
 
 <p><em>The workflowDefinitionKey and workflowDefinitionVersion segment of the scope would be replaced with the related values.</em></p>
 
-<p>Within the workflow definition you can access the vault variables with the expression <code class="language-plaintext highlighter-rouge">{{ vault.variables.erroremail }}</code></p>
+<p>Within the workflow definition you can access the vault variables with the expression <code class="language-plaintext highlighter-rouge">{{ vault.variables.erroremail }}</code>. Similarly if it was a vault secret you wanted to access you could do <code class="language-plaintext highlighter-rouge">{{ vault.secrets.erroremail }}</code>.</p>
 
-<p>Depending on what scopes you have stored against the key, it will return different values. AireFlow requests the key of <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey:workflowDefinitionVersion</code> so this would return dev.aireflowerror@airelogic.com</p>
+<p>Depending on what scopes you have stored against the key, it will return different values. For workflow mapping, AireFlow requests use the scope of <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey:workflowDefinitionVersion</code>, so this would return dev.aireflowerror@airelogic.com.</p>
 
-<p>However if you wanted a value to match only on the <code class="language-plaintext highlighter-rouge">workflowDefinitionKey</code> for all versions you could remove the last segment of the scope when creating the variable e.g. <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey</code></p>
+<p>However if you wanted a value to match only on the <code class="language-plaintext highlighter-rouge">workflowDefinitionKey</code> for all versions you could remove the last segment of the scope when creating the variable/secret e.g. <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey</code></p>
 
 <p>If you were to have the scope as <code class="language-plaintext highlighter-rouge">flow</code>, it would now match for all the AireFlow calls across all workflow definitions.</p>
 
