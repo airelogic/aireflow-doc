@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+        
+    <url>
+      <loc>https://docs.aireflow.co.uk/welcome-to-jekyll/</loc>
+      <lastmod>2020-10-26T13:46:50+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/404.html</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/about/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/changelog/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/assets/css/main.css</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/search.json</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/sitemap.xml</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/feed.xml</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/assets/css/main.css.map</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/event-definition-groups/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/getting-started/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/git-import/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/graphql-api-definition/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/graphql-api-explorer/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/import-export/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/mapping-airevault/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/mapping/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/mutations/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/rbac/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/task-due-date/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/task-keys/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/task-statuses/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/task-types/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/terminology/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/triggers/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/updating-tasks/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/versioning/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://docs.aireflow.co.uk/docs/workflow-definitions/</loc>
+    
+      <lastmod>2024-02-13T11:13:03+00:00</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
