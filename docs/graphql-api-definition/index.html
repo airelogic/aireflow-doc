@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/graphql-api-definition/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-03T15:36:18+00:00" />
+<meta property="article:published_time" content="2024-08-02T14:24:18+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="GraphQL API Definition" />
 <script type="application/ld+json">
-{"description":"The following document outlines the AireFlow GraphQL API, available at /api/graphql/v2.","headline":"GraphQL API Definition","dateModified":"2024-07-03T15:36:18+00:00","datePublished":"2024-07-03T15:36:18+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/graphql-api-definition/"},"url":"https://docs.aireflow.co.uk/docs/graphql-api-definition/","author":{"@type":"Person","name":"Stephen Cripps"},"@context":"https://schema.org"}</script>
+{"description":"The following document outlines the AireFlow GraphQL API, available at /api/graphql/v2.","headline":"GraphQL API Definition","dateModified":"2024-08-02T14:24:18+00:00","datePublished":"2024-08-02T14:24:18+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/graphql-api-definition/"},"url":"https://docs.aireflow.co.uk/docs/graphql-api-definition/","author":{"@type":"Person","name":"Stephen Cripps"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -243,9 +243,9 @@
 
 
 
-<time datetime="2024-07-03T15:36:18+00:00" itemprop="datePublished">
+<time datetime="2024-08-02T14:24:18+00:00" itemprop="datePublished">
     
-    Jul 3, 2024
+    Aug 2, 2024
 </time>
 
                     </div>
@@ -273,6 +273,7 @@
             subjectId
             correlationId
             assigneeId
+            assigneeType
             owner
             workflowDefinitionVersion
             workflowDefinitionId
@@ -325,6 +326,11 @@
             property: "assigneeId"
             condition: EQ
             value: "1"
+    },    
+    {
+            property: "assigneeType"
+            condition: EQ
+            value: "Subject"
     },
     {
             property: "state[comments]"
