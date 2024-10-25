@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>AireVault Mapping | AireFlow Docs</title>
+<title>Metrics | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="AireVault Mapping" />
-<meta name="author" content="Jag Nahl & Callum Goodridge" />
+<meta property="og:title" content="Metrics" />
+<meta name="author" content="Callum Goodridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Mapping AireVault Variables &amp; Secrets" />
-<meta property="og:description" content="Mapping AireVault Variables &amp; Secrets" />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/mapping-airevault/" />
+<meta name="description" content="What is the Metrics page?" />
+<meta property="og:description" content="What is the Metrics page?" />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/metrics/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/metrics/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-10-25T09:44:59+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AireVault Mapping" />
+<meta property="twitter:title" content="Metrics" />
 <script type="application/ld+json">
-{"description":"Mapping AireVault Variables &amp; Secrets","headline":"AireVault Mapping","dateModified":"2024-10-25T09:44:59+00:00","datePublished":"2024-10-25T09:44:59+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/mapping-airevault/"},"url":"https://docs.aireflow.co.uk/docs/mapping-airevault/","author":{"@type":"Person","name":"Jag Nahl & Callum Goodridge"},"@context":"https://schema.org"}</script>
+{"description":"What is the Metrics page?","headline":"Metrics","dateModified":"2024-10-25T09:44:59+00:00","datePublished":"2024-10-25T09:44:59+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/metrics/"},"url":"https://docs.aireflow.co.uk/docs/metrics/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -141,7 +141,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
+                      <li class=""><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
                     
                       
                       
@@ -208,7 +208,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/metrics/">Metrics</a></li>
+                      <li class="uk-active"><a href="/docs/metrics/">Metrics</a></li>
                     
                     </ul>
                     
@@ -241,9 +241,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">AireVault Mapping</h1>
+                    <h1 class="uk-article-title">Metrics</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Learn how to map AireVault variables and secrets.</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -260,36 +260,44 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="mapping-airevault-variables--secrets">Mapping AireVault Variables &amp; Secrets</h2>
+                        <h2 id="what-is-the-metrics-page">What is the Metrics page?</h2>
 
-<p>Using the AireVault API you can create variables and secrets that can be used within AireFlow’s workflow definition. Each of these have a key and a number of scoped values that can be specified.</p>
+<p>This page allows users to better understand operational usage by providing an overview of the operational state of AireFlow. This can be useful in a number of ways, including better understanding whether a workflow can be retired and seeing a summary of the number of tasks for a particular workflow at a glance.</p>
 
-<p>Similar to using liquid to map data within the context, AireVault variables and secrets are mapped in the same way.</p>
+<h2 id="charts">Charts</h2>
 
-<p>Below would be an example request to AireVault to create a new vault variable to store an error email address:</p>
+<p>One of the charts displayed on this page includes a bar chart which is split up by workflow and then by the number of tasks for each status. Hovering over the graph will provide some further information including the full worklow key and a list of the status counts. The results shown in the bar chart will change depending on the search filter and date filters applied.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"erroremail"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flow:workflowDefinitionKey:workflowDefinitionVersion"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev.aireflowerror@airelogic.com"</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<p><img src="/assets/img/barchart.PNG" alt="Workflow task counts by status bar chart" /></p>
 
-<p><em>The workflowDefinitionKey and workflowDefinitionVersion segment of the scope would be replaced with the related values.</em></p>
+<p>Secondly, there is a pie chart which shows a breakdown of all the task statuses across every workflow. If you hover over the pie chart you will see the actual number of tasks for that particular status. Again, this chart will be impacted by the filters selected at the top of the page.</p>
 
-<p>Within the workflow definition you can access the vault variables with the expression <code class="language-plaintext highlighter-rouge">{{ vault.variables.erroremail }}</code>. Similarly if it was a vault secret you wanted to access you could do <code class="language-plaintext highlighter-rouge">{{ vault.secrets.erroremail }}</code>.</p>
+<p><img src="/assets/img/piechart.PNG" alt="Task counts by status pie chart" /></p>
 
-<p>Depending on what scopes you have stored against the key, it will return different values. For workflow mapping, AireFlow requests use the scope of <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey:workflowDefinitionVersion</code>, so this would return dev.aireflowerror@airelogic.com.</p>
+<h2 id="workflow-task-counts-table">Workflow Task Counts Table</h2>
+<p>This table shows a list of workflows with tasks that have been updated within the date range supplied by the date filter. The <code class="language-plaintext highlighter-rouge">Last Activity</code> column displays the date and time that the task was last updated. Each status column will display the number of tasks with that status for the associated workflow.</p>
 
-<p>However if you wanted a value to match only on the <code class="language-plaintext highlighter-rouge">workflowDefinitionKey</code> for all versions you could remove the last segment of the scope when creating the variable/secret e.g. <code class="language-plaintext highlighter-rouge">flow:workflowDefinitionKey</code></p>
+<p>Provided you have the right access level, there may be an expand icon on the right hand side which allows you to view further task details.</p>
 
-<p>If you were to have the scope as <code class="language-plaintext highlighter-rouge">flow</code>, it would now match for all the AireFlow calls across all workflow definitions.</p>
+<p><img src="/assets/img/tasks.PNG" alt="Exapanded workflow row showing tasks" /></p>
+
+<p>Here you can click on the status buttons to filter the list to one or more statuses so that only those tasks are displayed in the view. You can also make amendments to tasks in the same way you can on the Tasks page</p>
+
+<p>The final row in the workflow task counts table is the <code class="language-plaintext highlighter-rouge">Totals</code> row which shows the sum of each status in the list. This is impacted by the filters you supply.</p>
+
+<h2 id="filters">Filters</h2>
+
+<p>When loading the page, the default filter applied is to only display the tasks that have been created/updated within the past week. However, if you want to amend the date filter you can click on the date filter box and a dialog will appear. Here you will be able to select some of the pre-set options e.g. 1 hour, 24 hours, 30 days or have more fine grained control by selecting the start and/or end date fields.</p>
+
+<p><img src="/assets/img/datefilters.PNG" alt="Date filter dialog" /></p>
+
+<p>Another way to filter the results is with the search box, here you can begin typing in a desired workflow key or last activity date. Any results matching/partially matching this value will appear in the charts and table.</p>
+
+<p><img src="/assets/img/searchfilter.PNG" alt="Search filter applied" /></p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=AireVault Mapping&url=https://docs.aireflow.co.uk/docs/mapping-airevault/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fmapping-airevault%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Metrics&url=https://docs.aireflow.co.uk/docs/metrics/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Fmetrics%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -313,16 +321,55 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/mapping/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/task-statuses/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/task-keys/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/graphql-api-definition/">Next &rarr;</a></li>
           
     </ul>
     
@@ -450,7 +497,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
+          <li class=""><a href="/docs/mapping-airevault/">AireVault Mapping</a></li>
         
           
           
@@ -517,7 +564,7 @@
         
           
           
-          <li class=""><a href="/docs/metrics/">Metrics</a></li>
+          <li class="uk-active"><a href="/docs/metrics/">Metrics</a></li>
         
         </ul>
         
