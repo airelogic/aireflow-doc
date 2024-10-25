@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://docs.aireflow.co.uk/docs/failed-task-retries/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-25T09:45:38+00:00" />
+<meta property="article:published_time" content="2024-10-25T13:26:45+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Retrying Failed Tasks" />
 <script type="application/ld+json">
-{"description":"For non-manual task types (Email, Http, AireFrame - Create Form, and Publish Event), users will have the ability to retry tasks that are in a Failed state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved.","headline":"Retrying Failed Tasks","dateModified":"2024-10-25T09:45:38+00:00","datePublished":"2024-10-25T09:45:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/failed-task-retries/"},"url":"https://docs.aireflow.co.uk/docs/failed-task-retries/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
+{"description":"For non-manual task types (Email, Http, AireFrame - Create Form, and Publish Event), users will have the ability to retry tasks that are in a Failed state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved.","headline":"Retrying Failed Tasks","dateModified":"2024-10-25T13:26:45+00:00","datePublished":"2024-10-25T13:26:45+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/failed-task-retries/"},"url":"https://docs.aireflow.co.uk/docs/failed-task-retries/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -256,7 +256,7 @@
 
 
 
-<time datetime="2024-10-25T09:45:38+00:00" itemprop="datePublished">
+<time datetime="2024-10-25T13:26:45+00:00" itemprop="datePublished">
     
     Oct 25, 2024
 </time>
@@ -268,7 +268,7 @@
 
 <p>There are several ways to access the manual retry functionality, which are listed below:</p>
 
-<h3 id="tasks-page">Tasks Page</h3>
+<h2 id="tasks-page">Tasks Page</h2>
 
 <p>From the tasks page (<code class="language-plaintext highlighter-rouge">/Tasks</code>), you can adjust the filters in the top right corner to display non-manual tasks. Once the desired task is located by expanding the task view, you can click the retry arrow button.</p>
 
@@ -278,7 +278,7 @@
 
 <p><img src="/assets/img/RetryTaskWarning.PNG" alt="Task page retry warning" /></p>
 
-<h3 id="metrics-page">Metrics Page</h3>
+<h2 id="metrics-page">Metrics Page</h2>
 
 <p>From the metrics page (<code class="language-plaintext highlighter-rouge">/Metrics</code>), you can locate and expand the workflow row to which your failed task belongs. To make identifying the failed tasks easier, you can click the <code class="language-plaintext highlighter-rouge">Failed</code> status button once the row is expanded, filtering out other statuses. Similar to the Tasks Page, once the task is located, you can click the retry arrow button.</p>
 
@@ -288,7 +288,7 @@
 
 <p><img src="/assets/img/RetryTaskWarning.PNG" alt="Metrics page retry warning" /></p>
 
-<h3 id="api">Api</h3>
+<h2 id="api">Api</h2>
 
 <p>To retry a failed task using the API, you can make a POST request to <code class="language-plaintext highlighter-rouge">/Api/Tasks/{taskId}/retry</code>.</p>
 
