@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Task Keys | AireFlow Docs</title>
+<title>Retrying Failed Tasks | AireFlow Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Task Keys" />
+<meta property="og:title" content="Retrying Failed Tasks" />
 <meta name="author" content="Callum Goodridge" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again." />
-<meta property="og:description" content="About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again." />
-<link rel="canonical" href="https://docs.aireflow.co.uk/docs/task-keys/" />
-<meta property="og:url" content="https://docs.aireflow.co.uk/docs/task-keys/" />
+<meta name="description" content="For non-manual task types (Email, Http, AireFrame - Create Form, and Publish Event), users will have the ability to retry tasks that are in a Failed state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved." />
+<meta property="og:description" content="For non-manual task types (Email, Http, AireFrame - Create Form, and Publish Event), users will have the ability to retry tasks that are in a Failed state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved." />
+<link rel="canonical" href="https://docs.aireflow.co.uk/docs/failed-task-retries/" />
+<meta property="og:url" content="https://docs.aireflow.co.uk/docs/failed-task-retries/" />
 <meta property="og:site_name" content="AireFlow Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-10-25T09:45:38+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Task Keys" />
+<meta property="twitter:title" content="Retrying Failed Tasks" />
 <script type="application/ld+json">
-{"description":"About A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again.","headline":"Task Keys","dateModified":"2024-10-25T09:45:38+00:00","datePublished":"2024-10-25T09:45:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/task-keys/"},"url":"https://docs.aireflow.co.uk/docs/task-keys/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
+{"description":"For non-manual task types (Email, Http, AireFrame - Create Form, and Publish Event), users will have the ability to retry tasks that are in a Failed state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved.","headline":"Retrying Failed Tasks","dateModified":"2024-10-25T09:45:38+00:00","datePublished":"2024-10-25T09:45:38+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.aireflow.co.uk/docs/failed-task-retries/"},"url":"https://docs.aireflow.co.uk/docs/failed-task-retries/","author":{"@type":"Person","name":"Callum Goodridge"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://docs.aireflow.co.uk/assets/posts/"/>
@@ -145,7 +145,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/task-keys/">Task Keys</a></li>
+                      <li class=""><a href="/docs/task-keys/">Task Keys</a></li>
                     
                       
                       
@@ -203,7 +203,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/failed-task-retries/">Retrying Failed Tasks</a></li>
+                      <li class="uk-active"><a href="/docs/failed-task-retries/">Retrying Failed Tasks</a></li>
                     
                     </ul>
                     
@@ -245,7 +245,7 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Task Keys</h1>
+                    <h1 class="uk-article-title">Retrying Failed Tasks</h1>
 
                     
 
@@ -264,29 +264,37 @@
                     </div>
 
                     <div class="article-content">
-                        <h2 id="about">About</h2>
-<p>A task key is an identifier for the task which is unique across all workflow definitions. Once you have saved your task with your key you will not be able to edit this key again.</p>
+                        <p>For non-manual task types (<code class="language-plaintext highlighter-rouge">Email</code>, <code class="language-plaintext highlighter-rouge">Http</code>, <code class="language-plaintext highlighter-rouge">AireFrame - Create Form</code>, and <code class="language-plaintext highlighter-rouge">Publish Event</code>), users will have the ability to retry tasks that are in a <code class="language-plaintext highlighter-rouge">Failed</code> state, provided these tasks are within the configured retry period. This feature allows users to recover business processes when issues with external systems have caused a failure that has since been resolved.</p>
 
-<h2 id="formatting-rules">Formatting Rules</h2>
-<p>There are a number of formatting rules which are set out which you must follow. They are as follows:</p>
-<ul>
-  <li>Only contains lowercase letters, numbers and dashes, e.g. <code class="language-plaintext highlighter-rouge">key-123</code>.</li>
-  <li>Starts with a letter e.g. <code class="language-plaintext highlighter-rouge">123-key</code> will not be valid but <code class="language-plaintext highlighter-rouge">key-123</code> will be.</li>
-</ul>
+<p>There are several ways to access the manual retry functionality, which are listed below:</p>
 
-<h2 id="duplicate-key-rules">Duplicate Key Rules</h2>
-<p>As mentioned above, the key is unique across all workflow definitions. An example of this is as follows:</p>
+<h3 id="tasks-page">Tasks Page</h3>
 
-<p>Let’s say we want to create a workflow definition with 2 tasks. We assign a key of <code class="language-plaintext highlighter-rouge">task-key-1</code> to the first task and <code class="language-plaintext highlighter-rouge">task-key-2</code> to the second task. This would be valid. If we then wanted to create a third task for this workflow definition but also assign <code class="language-plaintext highlighter-rouge">task-key-1</code> as the key to this third task then we would get an error as this key has already been used.</p>
+<p>From the tasks page (<code class="language-plaintext highlighter-rouge">/Tasks</code>), you can adjust the filters in the top right corner to display non-manual tasks. Once the desired task is located by expanding the task view, you can click the retry arrow button.</p>
 
-<p>Taking this example, if we instead wanted to create another new workflow definition with only one task with a key of <code class="language-plaintext highlighter-rouge">task-key-1</code> we would also see an error. Even though this key would be unique for this particular workflow definition, it has already been used in another separate workflow definition.</p>
+<p><img src="/assets/img/TasksPageFailedRetry.PNG" alt="Task page retry" /></p>
 
-<p>Finally, the only time where you will see the key used more than once for a workflow definition is when you have multiple versions. If you take the first example again where we have two tasks, one with the key <code class="language-plaintext highlighter-rouge">task-key-1</code> and one with the key <code class="language-plaintext highlighter-rouge">task-key-2</code>, and then create a new version of this workflow, we would not see an error. Version one of the workflow definition will have two tasks, both with the same keys as the two tasks in version two.</p>
+<p>This will bring up a dialog, which you should read and accept before clicking the retry task button. If successful, the task will now appear in a ‘Retrying’ state.</p>
 
+<p><img src="/assets/img/RetryTaskWarning.PNG" alt="Task page retry warning" /></p>
+
+<h3 id="metrics-page">Metrics Page</h3>
+
+<p>From the metrics page (<code class="language-plaintext highlighter-rouge">/Metrics</code>), you can locate and expand the workflow row to which your failed task belongs. To make identifying the failed tasks easier, you can click the <code class="language-plaintext highlighter-rouge">Failed</code> status button once the row is expanded, filtering out other statuses. Similar to the Tasks Page, once the task is located, you can click the retry arrow button.</p>
+
+<p><img src="/assets/img/MetricsPageFailedRetry.PNG" alt="Metrics page retry" /></p>
+
+<p>This will bring up a dialog, which you should read and accept before clicking the retry task button. If successful, the task will now appear in a ‘Retrying’ state.</p>
+
+<p><img src="/assets/img/RetryTaskWarning.PNG" alt="Metrics page retry warning" /></p>
+
+<h3 id="api">Api</h3>
+
+<p>To retry a failed task using the API, you can make a POST request to <code class="language-plaintext highlighter-rouge">/Api/Tasks/{taskId}/retry</code>.</p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Task Keys&url=https://docs.aireflow.co.uk/docs/task-keys/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Ftask-keys%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Retrying Failed Tasks&url=https://docs.aireflow.co.uk/docs/failed-task-retries/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.aireflow.co.uk%2Fdocs%2Ffailed-task-retries%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -313,16 +321,52 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/mapping-airevault/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/task-statuses/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/task-types/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/metrics/">Next &rarr;</a></li>
           
     </ul>
     
@@ -357,10 +401,6 @@
     
 
     
-        <li><a href="/docs/failed-task-retries/">Retrying Failed Tasks</a></li>
-        
-        
-    
 
     
 
@@ -384,6 +424,19 @@
 
     
         <li><a href="/docs/git-import/">Importing from a Git Repository</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/graphql-api-definition/">GraphQL API Definition</a></li>
         
         
             
@@ -454,7 +507,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/task-keys/">Task Keys</a></li>
+          <li class=""><a href="/docs/task-keys/">Task Keys</a></li>
         
           
           
@@ -512,7 +565,7 @@
         
           
           
-          <li class=""><a href="/docs/failed-task-retries/">Retrying Failed Tasks</a></li>
+          <li class="uk-active"><a href="/docs/failed-task-retries/">Retrying Failed Tasks</a></li>
         
         </ul>
         
