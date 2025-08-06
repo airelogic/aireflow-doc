@@ -1,0 +1,28 @@
+import{_ as a,c as s,o as e,a4 as n}from"./chunks/framework.ttppV29E.js";const g=JSON.parse('{"title":"Updating Task Instances","description":"","frontmatter":{},"headers":[],"relativePath":"docs/tasks/updating-tasks.md","filePath":"docs/tasks/updating-tasks.md","lastUpdated":1754486025000}'),t={name:"docs/tasks/updating-tasks.md"},p=n(`<h1 id="updating-task-instances" tabindex="-1">Updating Task Instances <a class="header-anchor" href="#updating-task-instances" aria-label="Permalink to &quot;Updating Task Instances&quot;">​</a></h1><p>Updating a task is done by making a PATCH request to <code>/Api/Tasks/{taskId}</code>, structured as a <a href="http://jsonpatch.com/" target="_blank" rel="noreferrer">JSON Patch request</a>. We support 3 patch operations: <code>add</code>, <code>replace</code> &amp; <code>remove</code>.</p><p>All requests should be an HTTP PATCH with a JSON body, structured as in the examples below.</p><h2 id="supported-paths" tabindex="-1">Supported paths <a class="header-anchor" href="#supported-paths" aria-label="Permalink to &quot;Supported paths&quot;">​</a></h2><p>The following (case insensitive) paths are the only ones supported:</p><ul><li><code>activitycontext/status</code></li><li><code>activitycontext/due</code></li><li><code>name</code></li><li><code>description</code></li><li><code>assigneeId</code></li><li><code>assigneeType</code></li><li><code>owner</code></li><li><code>ownerType</code></li><li><code>state</code> (to update/replace the entire state)</li><li><code>state/{key}</code> (to update a single value in state)</li></ul><h2 id="operation-replace" tabindex="-1">Operation: Replace <a class="header-anchor" href="#operation-replace" aria-label="Permalink to &quot;Operation: Replace&quot;">​</a></h2><p>To replace an existing value. This will change a value that already exists, <strong>if the value does not yet exist the task will not be changed</strong>.</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>[</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    &quot;op&quot;: &quot;replace&quot;,</span></span>
+<span class="line"><span>    &quot;path&quot;: &quot;/ActivityContext/Status&quot;,</span></span>
+<span class="line"><span>    &quot;value&quot;: &quot;InProgress&quot;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>]</span></span></code></pre></div><h2 id="operation-add" tabindex="-1">Operation: Add <a class="header-anchor" href="#operation-add" aria-label="Permalink to &quot;Operation: Add&quot;">​</a></h2><p>To add a new value to task state, use the <code>add</code> operation. This will add a value if it doesn&#39;t already exist, or replace a value that already exists.</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>[</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    &quot;op&quot;: &quot;add&quot;,</span></span>
+<span class="line"><span>    &quot;path&quot;: &quot;/state/first&quot;,</span></span>
+<span class="line"><span>    &quot;value&quot;: &quot;test&quot;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>]</span></span></code></pre></div><h2 id="operation-remove" tabindex="-1">Operation: Remove <a class="header-anchor" href="#operation-remove" aria-label="Permalink to &quot;Operation: Remove&quot;">​</a></h2><p>To remove an existing value. This will only replace a value that already exists, if the value does not exist then nothing will be changed</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>[</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    &quot;op&quot;: &quot;remove&quot;,</span></span>
+<span class="line"><span>    &quot;path&quot;: &quot;/state/third&quot;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>]</span></span></code></pre></div><h2 id="multiple-operations" tabindex="-1">Multiple Operations <a class="header-anchor" href="#multiple-operations" aria-label="Permalink to &quot;Multiple Operations&quot;">​</a></h2><p>Multiple operations in one request is supported, like this:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>[</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    &quot;op&quot;: &quot;remove&quot;,</span></span>
+<span class="line"><span>    &quot;path&quot;: &quot;/state/third&quot;</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    &quot;op&quot;: &quot;add&quot;,</span></span>
+<span class="line"><span>    &quot;path&quot;: &quot;/state/fourth&quot;,</span></span>
+<span class="line"><span>    &quot;value&quot;: &quot;My new value&quot;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>]</span></span></code></pre></div>`,18),o=[p];function i(l,d,c,u,r,h){return e(),s("div",null,o)}const v=a(t,[["render",i]]);export{g as __pageData,v as default};
